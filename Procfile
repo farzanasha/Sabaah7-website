@@ -1,1 +1,1 @@
-web: vendor/bin/frankenphp php-server --port $PORT public/
+web: php artisan serve --host 0.0.0.0 --port 8080
