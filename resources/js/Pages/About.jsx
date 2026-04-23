@@ -1,0 +1,52 @@
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+
+export default function About() {
+    return (
+        <div >
+
+            {/* TOP HERO SECTION */}
+            <div
+                className="relative h-[40vh] flex items-center justify-center text-white text-center"
+                style={{
+                    backgroundImage: "url('/images/about.jpg')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                }}
+            >
+                {/* DARK OVERLAY */}
+                <div className="absolute inset-0 bg-black/60"></div>
+
+                {/* TITLE */}
+                <div className="relative z-10">
+                    <h1 className="text-5xl font-bold">ABOUT US</h1>
+                    <p className="mt-2 text-lg">Get to know Sabaah7</p>
+                </div>
+            </div>
+
+            {/* CONTENT SECTION */}
+            <div className="bg-white py-16 px-6">
+                <div className="max-w-4xl mx-auto text-center">
+
+                    <h2 className="text-3xl font-bold mb-6">
+                        Who We Are
+                    </h2>
+
+                    <p className="text-gray-600 leading-relaxed">
+                        Sabaah7 is a headquarters company managing multiple business operations
+                        including food services, agriculture, tailoring, and livestock.
+                        Our mission is to develop sustainable businesses under one strong brand
+                        while supporting local community growth.
+                    </p>
+
+                    <p className="text-gray-600 leading-relaxed mt-6">
+                        We focus on building structured business systems, improving operations,
+                        and creating long-term value across all subsidiaries under Sabaah7.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    );
+}
+About.layout = page => <AuthenticatedLayout children={page} />;
