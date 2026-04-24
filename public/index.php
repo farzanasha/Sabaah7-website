@@ -1,4 +1,5 @@
 <?php
+die("TEST: Start Command Berfungsi!");
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 
