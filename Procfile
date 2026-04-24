@@ -1,1 +1,1 @@
-web: chmod -R 775 storage bootstrap/cache && php artisan config:clear && php artisan view:clear && php artisan route:clear && php artisan serve --host 0.0.0.0 --port $PORT
+web: vendor/bin/frankenphp php-server --port $PORT public/
