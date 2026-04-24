@@ -1,5 +1,5 @@
 <?php
-
+die("Sabaah7: Tren Dah Sampai Stesen!");
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 
