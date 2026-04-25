@@ -74,23 +74,23 @@ export default function Navbar() {
                 */}
                 <div className={`${isMenuOpen ? 'block' : 'hidden'} md:flex md:items-center absolute top-16 right-0 w-full md:w-auto bg-white md:bg-transparent shadow-lg md:shadow-none p-6 md:p-0 md:static`}>
                     <div className="flex flex-col md:flex-row md:gap-6 w-full items-center">
-                        <Link href="/" className="w-full text-center py-2 md:py-0 border-b md:border-b-0 hover:text-green-700 hover:bg-green-100 md:hover:bg-transparent rounded md:rounded-none">
+                        <Link href="/" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-2 md:py-0 border-b md:border-b-0 hover:text-green-700 hover:bg-green-100 md:hover:bg-transparent rounded md:rounded-none">
                             Home
                         </Link>
 
-                        <Link href="/about" className="w-full text-center py-2 md:py-0 border-b md:border-b-0 hover:text-green-700 hover:bg-green-100 md:hover:bg-transparent rounded md:rounded-none">
+                        <Link href="/about" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-2 md:py-0 border-b md:border-b-0 hover:text-green-700 hover:bg-green-100 md:hover:bg-transparent rounded md:rounded-none">
                             About
                         </Link>
 
-                        <Link href="/businesses" className="w-full text-center py-2 md:py-0 border-b md:border-b-0 hover:text-green-700 hover:bg-green-100 md:hover:bg-transparent rounded md:rounded-none">
+                        <Link href="/businesses" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-2 md:py-0 border-b md:border-b-0 hover:text-green-700 hover:bg-green-100 md:hover:bg-transparent rounded md:rounded-none">
                             Businesses
                         </Link>
 
-                        <Link href="/products" className="w-full text-center py-2 md:py-0 border-b md:border-b-0 hover:text-green-700 hover:bg-green-100 md:hover:bg-transparent rounded md:rounded-none">
+                        <Link href="/products" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-2 md:py-0 border-b md:border-b-0 hover:text-green-700 hover:bg-green-100 md:hover:bg-transparent rounded md:rounded-none">
                             Products
                         </Link>
 
-                        <Link href="/contact" className="w-full text-center py-2 md:py-0 hover:text-green-700 hover:bg-green-100 md:hover:bg-transparent rounded md:rounded-none">
+                        <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-2 md:py-0 hover:text-green-700 hover:bg-green-100 md:hover:bg-transparent rounded md:rounded-none">
                             Contact
                         </Link>
                     </div>
