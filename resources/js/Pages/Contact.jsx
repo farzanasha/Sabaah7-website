@@ -36,8 +36,8 @@ export default function Contact() {
 
                             <div>
                                 <p className="font-semibold">📞 Phone</p>
-                                <p>+60 11-1119 0377 (En. Dzulqarnain Adzmi)</p>
-                                <p>+60 11-6513 9295 (En. Prabu Daymudoo)</p>
+                                <p>+60 11-1119 0377 (Encik Dzulqarnain Adzmi)</p>
+                                <p>+60 11-6513 9295 (Encik Prabu Daymudoo)</p>
                             </div>
 
                             <div>
