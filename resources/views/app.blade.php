@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+	<link rel="icon" type="image/x-icon" href="/favicon.ico?v=1">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
+        <title>Welcome to Sabaah7</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
