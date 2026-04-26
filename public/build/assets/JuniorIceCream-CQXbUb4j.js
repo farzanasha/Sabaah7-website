@@ -1,4 +1,4 @@
-import{n as e,t}from"./jsx-runtime-D9CfDZ_c.js";import{t as n}from"./AuthenticatedLayout-CfAGYlzp.js";import{t as r}from"./proxy-YjOv4j7J.js";var i=t();function a(){return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsx)(`style`,{dangerouslySetInnerHTML:{__html:`
+import{n as e,t}from"./jsx-runtime-D9CfDZ_c.js";import{t as n}from"./AuthenticatedLayout-BQvah3kI.js";import{t as r}from"./proxy-YjOv4j7J.js";var i=t();function a(){return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsx)(`style`,{dangerouslySetInnerHTML:{__html:`
                 nav { background-color: #32CD32 !important; } 
                 nav a, nav button { color: white !important; }
                 

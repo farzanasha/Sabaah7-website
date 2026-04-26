@@ -41,35 +41,43 @@ export default function Navbar() {
                     </button>
                 </div>
 
-                {/* --- MENU PENUH & DROPDOWN --- */}
-                {/* Kekalkan bg-black/70 untuk dropdown mobile yang anda suka tadi */}
-                <div className={`${isMenuOpen ? 'block' : 'hidden'} md:flex md:items-center absolute top-16 right-0 w-full md:w-auto bg-black/70 backdrop-blur-lg md:bg-transparent shadow-lg md:shadow-none p-6 md:p-0 md:static`}>
-                    <div className="flex flex-col md:flex-row md:gap-6 w-full items-center">
-                        
-                        <Link href="/" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-300 transition font-medium">
-                            Home
-                        </Link>
+{/* --- MENU PENUH & DROPDOWN --- */}
+<div className={`${isMenuOpen ? 'block' : 'hidden'} md:flex md:items-center absolute top-16 right-0 w-full md:w-auto bg-black/70 backdrop-blur-lg md:bg-transparent shadow-lg md:shadow-none p-6 md:p-0 md:static`}>
+    <div className="flex flex-col md:flex-row md:gap-6 w-full items-center">
+        
+        <Link href="/" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-300 transition font-medium">
+            Home
+        </Link>
 
-                        <Link href="/about" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-300 transition font-medium">
-                            About
-                        </Link>
+        <Link href="/about" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-300 transition font-medium">
+            About
+        </Link>
 
-                        <Link href="/businesses" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-300 transition font-medium">
-                            Businesses
-                        </Link>
+        <Link href="/businesses" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-300 transition font-medium">
+            Businesses
+        </Link>
 
-                        <a href="/products/junior#products" 
-                            onClick={() => setIsMenuOpen(false)} 
-                            className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-300 transition font-medium cursor-pointer"
-                        >
-                            Products
-                        </a>
+        {/* --- PENYELAMAT: TAG <a> YANG DAH DIBETULKAN --- */}
+        <a  
+            href="/products/junior#products" 
+            onClick={(e) => {
+                setIsMenuOpen(false);
+                if (window.location.pathname === '/products/junior') {
+                    e.preventDefault();
+                    const el = document.getElementById('products');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }
+            }} 
+            className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-300 transition font-medium cursor-pointer"
+        >
+            Products
+        </a>
 
-                        <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 text-white hover:text-red-300 transition font-medium">
-                            Contact
-                        </Link>
-                    </div>
-                </div>
+        <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 text-white hover:text-red-300 transition font-medium">
+            Contact
+        </Link>
+    </div>
+</div>
 
             </div>
         </nav>
