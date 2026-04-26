@@ -58,9 +58,12 @@ export default function Navbar() {
                             Businesses
                         </Link>
 
-                        <Link href="/products" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-300 transition font-medium">
+                        <a href="/products/junior#products" 
+                            onClick={() => setIsMenuOpen(false)} 
+                            className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-300 transition font-medium cursor-pointer"
+                        >
                             Products
-                        </Link>
+                        </a>
 
                         <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 text-white hover:text-red-300 transition font-medium">
                             Contact
