@@ -1,6 +1,6 @@
 {
-  "_AuthenticatedLayout-CKAQlFBZ.js": {
-    "file": "assets/AuthenticatedLayout-CKAQlFBZ.js",
+  "_AuthenticatedLayout-BJxN1WCv.js": {
+    "file": "assets/AuthenticatedLayout-BJxN1WCv.js",
     "name": "AuthenticatedLayout",
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
@@ -54,14 +54,14 @@
     ]
   },
   "resources/js/Pages/About.jsx": {
-    "file": "assets/About-CGv5r2zX.js",
+    "file": "assets/About-CRDXfLkB.js",
     "name": "About",
     "src": "resources/js/Pages/About.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
       "_proxy-YjOv4j7J.js",
-      "_AuthenticatedLayout-CKAQlFBZ.js"
+      "_AuthenticatedLayout-BJxN1WCv.js"
     ]
   },
   "resources/js/Pages/Auth/ConfirmPassword.jsx": {
@@ -140,47 +140,47 @@
     ]
   },
   "resources/js/Pages/Businesses.jsx": {
-    "file": "assets/Businesses-BDCEC8m-.js",
+    "file": "assets/Businesses-ES9xBak8.js",
     "name": "Businesses",
     "src": "resources/js/Pages/Businesses.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
       "_proxy-YjOv4j7J.js",
-      "_AuthenticatedLayout-CKAQlFBZ.js"
+      "_AuthenticatedLayout-BJxN1WCv.js"
     ]
   },
   "resources/js/Pages/Contact.jsx": {
-    "file": "assets/Contact-Dienl9A0.js",
+    "file": "assets/Contact-CCkhkvmH.js",
     "name": "Contact",
     "src": "resources/js/Pages/Contact.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
       "_proxy-YjOv4j7J.js",
-      "_AuthenticatedLayout-CKAQlFBZ.js"
+      "_AuthenticatedLayout-BJxN1WCv.js"
     ]
   },
   "resources/js/Pages/Home.jsx": {
-    "file": "assets/Home-Dio0FJLT.js",
+    "file": "assets/Home-BHGOqkEc.js",
     "name": "Home",
     "src": "resources/js/Pages/Home.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
       "_proxy-YjOv4j7J.js",
-      "_AuthenticatedLayout-CKAQlFBZ.js"
+      "_AuthenticatedLayout-BJxN1WCv.js"
     ]
   },
   "resources/js/Pages/Profile/Edit.jsx": {
-    "file": "assets/Edit-K-avuxhx.js",
+    "file": "assets/Edit-BXPGkH9e.js",
     "name": "Edit",
     "src": "resources/js/Pages/Profile/Edit.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
       "resources/js/Pages/Profile/Partials/DeleteUserForm.jsx",
-      "_AuthenticatedLayout-CKAQlFBZ.js",
+      "_AuthenticatedLayout-BJxN1WCv.js",
       "resources/js/Pages/Profile/Partials/UpdatePasswordForm.jsx",
       "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.jsx"
     ]
@@ -224,40 +224,40 @@
     ]
   },
   "resources/js/Pages/products/JuniorIceCream.jsx": {
-    "file": "assets/JuniorIceCream-C8K46z21.js",
+    "file": "assets/JuniorIceCream-BqAQ4w7N.js",
     "name": "JuniorIceCream",
     "src": "resources/js/Pages/products/JuniorIceCream.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
       "_proxy-YjOv4j7J.js",
-      "_AuthenticatedLayout-CKAQlFBZ.js"
+      "_AuthenticatedLayout-BJxN1WCv.js"
     ]
   },
   "resources/js/Pages/products/ProductDetail.jsx": {
-    "file": "assets/ProductDetail-Cu--M-Em.js",
+    "file": "assets/ProductDetail-DnZCIz3a.js",
     "name": "ProductDetail",
     "src": "resources/js/Pages/products/ProductDetail.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
       "_proxy-YjOv4j7J.js",
-      "_AuthenticatedLayout-CKAQlFBZ.js"
+      "_AuthenticatedLayout-BJxN1WCv.js"
     ]
   },
   "resources/js/Pages/products/index.jsx": {
-    "file": "assets/products-Bdc85q97.js",
+    "file": "assets/products-DCTj9Ip8.js",
     "name": "products",
     "src": "resources/js/Pages/products/index.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
       "_proxy-YjOv4j7J.js",
-      "_AuthenticatedLayout-CKAQlFBZ.js"
+      "_AuthenticatedLayout-BJxN1WCv.js"
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-sZkvfsWp.js",
+    "file": "assets/app-BkATwKCA.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,

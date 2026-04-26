@@ -58,20 +58,14 @@ export default function Navbar() {
         </Link>
 
         {/* --- PENYELAMAT: TAG <a> YANG DAH DIBETULKAN --- */}
-        <a  
-            href="/products/junior#products" 
-            onClick={(e) => {
-                setIsMenuOpen(false);
-                if (window.location.pathname === '/products/junior') {
-                    e.preventDefault();
-                    const el = document.getElementById('products');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }
-            }} 
-            className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-300 transition font-medium cursor-pointer"
-        >
-            Products
-        </a>
+       <Link 
+    href="/products" 
+    onClick={() => setIsMenuOpen(false)} 
+    className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-300 transition font-medium"
+>
+    Products
+    
+</Link>
 
         <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 text-white hover:text-red-300 transition font-medium">
             Contact
