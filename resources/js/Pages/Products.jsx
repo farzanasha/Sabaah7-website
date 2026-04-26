@@ -14,98 +14,73 @@ export default function Products() {
                 }}
             >
                 <div className="absolute inset-0 bg-black/60"></div>
-
                 <div className="relative z-10">
                     <h1 className="text-5xl font-bold">OUR PRODUCTS</h1>
-                    <p className="mt-2 text-lg">
-                        Explore Sabaah7 Business Ecosystem
-                    </p>
+                    <p className="mt-2 text-lg">Explore Sabaah7 Business Ecosystem</p>
                 </div>
             </div>
 
             {/* CONTENT */}
-            <div className="bg-white py-16 px-6">
+            <div className="py-16 px-6">
                 <div className="max-w-6xl mx-auto space-y-20">
 
                     {/* ================= FOOD & BEVERAGE ================= */}
-<div>
-    <h2 className="text-3xl font-bold text-center mb-10">
-        🍽️ Food & Beverage
-    </h2>
+                    <div>
+                        <h2 className="text-3xl font-bold text-center mb-10 text-white">
+                            🍽️ Food & Beverage
+                        </h2>
+                        <div className="grid grid-cols-2 gap-6 justify-center max-w-lg mx-auto">
+                            {/* AISKRIM JUNIOR */}
+                            <Link href="/aiskrim-junior" className="group">
+                                <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-xl transition-all duration-300 group-hover:-translate-y-2 group-hover:bg-white/20 text-center flex flex-col items-center">
+                                    <img src="/images/logos/junior.png" className="h-24 object-contain" />
+                                    <p className="mt-3 font-bold text-white text-sm md:text-base">Aiskrim Junior</p>
+                                </div>
+                            </Link>
 
-    {/* Tukar justify-items-center kepada justify-center */}
-    <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-10 justify-center max-w-2xl mx-auto">
-
-        {/* AISKRIM JUNIOR */}
-        <Link href="/aiskrim-junior" className="group text-center">
-            <div className="transition-all duration-300 group-hover:-translate-y-3 group-hover:scale-105">
-                <img 
-                    src="/images/logos/junior.png" 
-                    className="h-28 mx-auto" 
-                />
-            </div>
-            <p className="mt-3 font-semibold text-gray-700">
-                Aiskrim Junior
-            </p>
-        </Link>
-
-        {/* WARUNG SOJA */}
-        <Link href="/warung-soja" className="group text-center">
-            <div className="transition-all duration-300 group-hover:-translate-y-3 group-hover:scale-105">
-                <img 
-                    src="/images/logos/soja.png" 
-                    className="h-28 mx-auto" 
-                />
-            </div>
-            <p className="mt-3 font-semibold text-gray-700">
-                Warung Soja
-            </p>
-        </Link>
-
-    </div>
-</div>
+                            {/* WARUNG SOJA */}
+                            <Link href="/warung-soja" className="group">
+                                <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-xl transition-all duration-300 group-hover:-translate-y-2 group-hover:bg-white/20 text-center flex flex-col items-center">
+                                    <img src="/images/logos/soja.png" className="h-24 object-contain" />
+                                    <p className="mt-3 font-bold text-white text-sm md:text-base">Warung Soja</p>
+                                </div>
+                            </Link>
+                        </div>
+                    </div>
 
                     {/* ================= STAPLE FOOD ================= */}
                     <div>
-                        <h2 className="text-3xl font-bold text-center mb-10">
+                        <h2 className="text-3xl font-bold text-center mb-10 text-white">
                             🍜 Staple Food & Noodle Products
                         </h2>
                         <div className="flex justify-center">
-                            <Link href="/mee-lantak" className="group text-center">
-                                <div className="transition-all duration-300 group-hover:-translate-y-3 group-hover:scale-105">
-                                    <img 
-                                        src="/images/logos/meelantak.png" 
-                                        alt="Mee Lantak" 
-                                        className="h-32 mx-auto" 
-                                    />
+                            <Link href="/mee-lantak" className="group w-48">
+                                <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-xl transition-all duration-300 group-hover:-translate-y-2 group-hover:bg-white/20 text-center flex flex-col items-center">
+                                    <img src="/images/logos/meelantak.png" className="h-24 object-contain" />
+                                    <p className="mt-3 font-bold text-white text-sm md:text-base">Mee Lantak</p>
                                 </div>
-                                <p className="mt-3 font-semibold text-gray-700">Mee Lantak</p>
                             </Link>
                         </div>
                     </div>
 
                     {/* ================= INTEGRATED SERVICES ================= */}
                     <div>
-                        <h2 className="text-3xl font-bold text-center mb-10">
+                        <h2 className="text-3xl font-bold text-center mb-10 text-white">
                             🧵 Integrated Services
                         </h2>
                         <div className="flex justify-center">
-                            <Link href="/kecil-molek" className="group text-center">
-                                <div className="transition-all duration-300 group-hover:-translate-y-3 group-hover:scale-105">
-                                    <img 
-                                        src="/images/logos/kecil.png" 
-                                        alt="Kecil Molek" 
-                                        className="h-32 mx-auto" 
-                                    />
+                            <Link href="/kecil-molek" className="group w-48">
+                                <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-xl transition-all duration-300 group-hover:-translate-y-2 group-hover:bg-white/20 text-center flex flex-col items-center">
+                                    <img src="/images/logos/kecil.png" className="h-24 object-contain" />
+                                    <p className="mt-3 font-bold text-white text-sm md:text-base">Kecil Molek</p>
                                 </div>
-                                <p className="mt-3 font-semibold text-gray-700">Kecil Molek Tailoring</p>
                             </Link>
                         </div>
                     </div>
 
                 </div>
             </div>
-        </div> // Tag penutup yang sebelum ini hilang
+        </div>
     );
 }
 
