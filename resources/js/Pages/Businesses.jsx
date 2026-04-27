@@ -6,7 +6,7 @@ export default function Businesses() {
         { title: "Agri-Business & Livestock", icon: "agri.png", active: false, subs: [] },
         { title: "Integrated Services", icon: "services.png", active: true, subs: [{ name: "Kecil Molek Tailoring", id: "kecil" }] },
         { title: "Staple Food & Noodle Products", icon: "noodles.png", active: true, subs: [{ name: "Mee Lantak", id: "meelantak" }] },
-        { title: "Food & Beverage", icon: "food.png", active: true, subs: [{ name: "Aiskrim Junior", id: "junior" }, { name: "Warung Soja", id: "soja" }] },
+        { title: "Food & Beverage", icon: "food.png", active: true, subs: [{ name: "Junior Ice Cream", id: "junior" }, { name: "Warung Soja", id: "soja" }] },
         { title: "Food Manufacturing & Processing", icon: "factory.png", active: false, subs: [] },
         { title: "Training & Business Academy", icon: "academy.png", active: false, subs: [] },
         { title: "Community Impact", icon: "community.png", active: false, subs: [] },
@@ -15,27 +15,52 @@ export default function Businesses() {
     const branchDetails = [
         { 
             id: 'junior', 
-            title: '🍦 Aiskrim Junior Branches', 
-            location: 'HQ & Main Branch, Selangor / Kuala Lumpur', 
-            phone: '+60 11-1119 0377' 
+            title: '🍦 Junior Ice Cream Branches', 
+            branches: [
+                { 
+                    name: 'HQ & Main Branch (Ipoh)', 
+                    address: 'Bulatan Sultan Azlan Shah, Meru Raya, 30020 Ipoh, Perak.', 
+                    phone: '+60 11-6513 9295' 
+                },
+                { 
+                    name: 'Ampang Branch', 
+                    address: 'Kg. Baru Ampang, 68000 Ampang, Selangor.', 
+                    phone: '+60 11-1119 0377' 
+                }
+            ]
         },
         { 
             id: 'soja', 
             title: '🥣 Warung Soja Branches', 
-            location: 'Jalan BK 5, Bandar Kinrara, Puchong, Selangor.', 
-            phone: '+60 11-xxxx xxxx' 
+            branches: [
+                { 
+                    name: 'Main Branch', 
+                    address: 'Jalan BK 5, Bandar Kinrara, Puchong, Selangor.', 
+                    phone: '+60 11-xxxx xxxx' 
+                }
+            ]
         },
         { 
             id: 'kecil', 
             title: '🧵 Kecil Molek Tailoring', 
-            location: 'Butik & Bengkel Jahitan, Selangor.', 
-            phone: '+60 11-xxxx xxxx' 
+            branches: [
+                { 
+                    name: 'Butik & Bengkel', 
+                    address: 'Butik & Bengkel Jahitan, Selangor.', 
+                    phone: '+60 11-xxxx xxxx' 
+                }
+            ]
         },
         { 
             id: 'meelantak', 
             title: '🍜 Mee Lantak Products', 
-            location: 'Pusat Edaran & Jualan, Selangor.', 
-            phone: '+60 11-xxxx xxxx' 
+            branches: [
+                { 
+                    name: 'Distribution Center', 
+                    address: 'Pusat Edaran & Jualan, Selangor.', 
+                    phone: '+60 11-xxxx xxxx' 
+                }
+            ]
         },
     ];
 
@@ -58,7 +83,6 @@ export default function Businesses() {
 
             {/* GRID SECTION (PILLARS) */}
             <div className="py-16 px-6">
-                {/* 1. Tukar grid kepada flex + justify-center supaya baris bawah duduk tengah */}
                 <div className="max-w-6xl mx-auto flex flex-wrap gap-6 justify-center">
                     {businessList.map((biz, index) => (
                         <motion.div 
@@ -67,10 +91,8 @@ export default function Businesses() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            /* 2. Tambah flex col + justify-center pada container utama kad */
                             className="group relative p-6 w-full max-w-[260px] h-[220px] bg-red-200 rounded-3xl border border-red-300 shadow-md overflow-hidden flex flex-col items-center justify-center"
                         >
-                            {/* KANDUNGAN DEPAN (Icon & Tajuk) - Dipaksa ke tengah */}
                             <div className="group-hover:opacity-0 transition-opacity duration-300 text-center flex flex-col items-center justify-center w-full h-full">
                                 <img 
                                     src={`/images/icons/${biz.icon}`} 
@@ -82,7 +104,6 @@ export default function Businesses() {
                                 </h3>
                             </div>
 
-                            {/* KANDUNGAN HOVER */}
                             <div className="absolute inset-0 bg-red-800 flex flex-col items-center justify-center p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                                 {biz.active ? (
                                     <div className="space-y-2 w-full text-center flex flex-col items-center justify-center">
@@ -113,8 +134,8 @@ export default function Businesses() {
 
             {/* DETAILS SECTION (BRANCHES) */}
             <div className="max-w-5xl mx-auto px-6 space-y-16">
-                {branchDetails.map((branch) => (
-                    <section id={branch.id} key={branch.id} className="scroll-mt-24">
+                {branchDetails.map((group) => (
+                    <section id={group.id} key={group.id} className="scroll-mt-24">
                         <motion.div 
                             initial={{ opacity: 0, y: 50 }} 
                             whileInView={{ opacity: 1, y: 0 }} 
@@ -122,15 +143,23 @@ export default function Businesses() {
                             className="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-white/10 shadow-2xl"
                         >
                             <h2 className="text-2xl font-bold text-white mb-6 border-b border-red-700/50 pb-2">
-                                {branch.title}
+                                {group.title}
                             </h2>
                             
-                            <div className="p-5 bg-white/5 rounded-2xl border border-white/5 text-gray-300">
-                                <p className="font-bold text-white mb-1">Main Office / Branch</p>
-                                <p className="text-sm leading-relaxed">{branch.location}</p>
-                                <p className="text-red-400 font-bold mt-3 flex items-center gap-2">
-                                    <span>📞</span> {branch.phone}
-                                </p>
+                            <div className="grid md:grid-cols-2 gap-4"> 
+                                {group.branches.map((branch, idx) => (
+                                    <div key={idx} className="p-5 bg-white/5 rounded-2xl border border-white/5 text-gray-300">
+                                        <p className="font-bold text-white mb-1 uppercase text-xs text-red-400">
+                                            {branch.name}
+                                        </p>
+                                        <p className="text-sm leading-relaxed min-h-[40px]">
+                                            {branch.address}
+                                        </p>
+                                        <p className="text-white font-bold mt-3 flex items-center gap-2">
+                                            <span className="text-red-500">📞</span> {branch.phone}
+                                        </p>
+                                    </div>
+                                ))}
                             </div>
                         </motion.div>
                     </section>

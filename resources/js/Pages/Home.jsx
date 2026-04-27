@@ -49,7 +49,7 @@ export default function Home() {
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-12 place-items-center">
                         {[
-                            { name: "Aiskrim Junior", logo: "junior.png", href: "/products/junior" },
+                            { name: "Junior Ice Cream", logo: "junior.png", href: "/products/junior" },
                             { name: "Warung Soja", logo: "soja.png", href: "/products/soja" },
                             { name: "Kecil Molek", logo: "kecil.png", href: "/products/kecil-molek" },
                             { name: "Mee Lantak", logo: "meelantak.png", href: "/products/mee-lantak" }
