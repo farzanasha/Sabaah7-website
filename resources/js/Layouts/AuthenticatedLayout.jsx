@@ -1,6 +1,7 @@
 // resources/js/Layouts/AuthenticatedLayout.jsx
 
 import Navbar from '@/Components/Navbar';
+import ScrollToTop from '@/Components/ScrollToTop';
 
 export default function AuthenticatedLayout({ children }) {
     return (
@@ -30,6 +31,9 @@ export default function AuthenticatedLayout({ children }) {
             <main className="relative z-10 pt-20">
                 {children}
             </main>
+            
+            {/* SCROLL TO TOP */}
+            <ScrollToTop />
 
             {/* FOOTER */}
             <footer className="relative z-10 bg-[#121212] py-10 mt-10 border-t border-white/5 text-center">
@@ -37,6 +41,8 @@ export default function AuthenticatedLayout({ children }) {
                     © 2026 Sabaah7. All rights reserved.
                 </p>
             </footer>
+
+
         </div>
     );
 }
