@@ -37,7 +37,6 @@ export default function Index() {
                     backgroundPosition: "center" 
                 }}
             >
-                {/* Kita tambah blur pada gambar background supaya tak serabut */}
                 <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
             </div>
 
@@ -48,7 +47,6 @@ export default function Index() {
                 <div className="h-[35vh] flex flex-col items-center justify-center text-white text-center px-6">
                     <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
                         <h1 className="text-4xl md:text-7xl font-black drop-shadow-2xl tracking-tighter uppercase leading-none">
-                            {/* Sekarang "Our" yang merah, "Products" jadi putih (ikut warna text-white parent) */}
                             <span className="text-red-600">Our</span> Products
                         </h1>
                         <p className="mt-3 text-lg opacity-90 font-medium">Explore the excellence of Sabaah7 brands</p>
@@ -66,9 +64,11 @@ export default function Index() {
                         <div className="space-y-20">
                             {categories.map((category, sIndex) => (
                                 <section key={sIndex}>
-                                    {/* Tajuk Kategori */}
-                                    <div className="flex flex-col items-center mb-10">
-                                        <h2 className="text-xl md:text-2xl font-black text-white uppercase tracking-[0.3em]">{category.title}</h2>
+                                    {/* Tajuk Kategori - DIPERBAIKI UNTUK MOBILE */}
+                                    <div className="flex flex-col items-center mb-10 text-center w-full overflow-hidden">
+                                        <h2 className="text-sm md:text-2xl font-black text-white uppercase tracking-[0.15em] md:tracking-[0.3em] whitespace-nowrap px-4">
+                                            {category.title}
+                                        </h2>
                                         <div className="h-1 w-12 bg-red-600 mt-2 rounded-full"></div>
                                     </div>
 

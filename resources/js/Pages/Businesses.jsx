@@ -7,7 +7,7 @@ export default function Businesses() {
     // 1. Load Google Maps API
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: "AIzaSyAnm9WUNxtfuXKMW7AHjfvlwiUmVoFdB7Q"
+        googleMapsApiKey: "AIzaSyCZjrjhlcP78qVdUDQElcQWDkAmKOPyCVw"
     });
 
     // Koordinat Cawangan
