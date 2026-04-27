@@ -15,8 +15,6 @@ export default function Gallery() {
                     { type: "image", url: "/images/gallery/wedding1-1.png" },
                     { type: "image", url: "/images/gallery/wedding1-2.png" },
                     { type: "image", url: "/images/gallery/wedding1-3.png" },
-                    // CONTOH VIDEO YOUTUBE: Masukkan ID sahaja (Contoh: dQw4w9WgXcQ)
-                    //{ type: "video", url: "dQw4w9WgXcQ" } 
                 ]
             },
             {
@@ -24,7 +22,6 @@ export default function Gallery() {
                 description: "Sesi latihan keselamatan makanan bagi memastikan kualiti terbaik.",
                 media: [
                     { type: "video", url: "SgQjwssO7AY" }, 
-                    //{ type: "image", url: "/images/gallery/training_group.jpg" }
                 ]
             }
         ],
@@ -45,24 +42,48 @@ export default function Gallery() {
         <AuthenticatedLayout>
             <Head title="Gallery - Sabaah7" />
 
-            <div className="min-h-screen bg-gray-50 py-20 px-6">
-                <div className="max-w-6xl mx-auto">
-                    <header className="text-center mb-16">
-                        <h1 className="text-5xl font-black text-[#8B0000] mb-4">GALLERY</h1>
-                        <p className="text-gray-600 uppercase tracking-widest font-semibold">Our Journey & Events</p>
-                        <div className="w-20 h-1.5 bg-[#8B0000] mx-auto mt-4 rounded-full"></div>
+            <div className="relative min-h-screen w-full bg-black overflow-hidden">
+                {/* 1. BACKGROUND IMAGE (FIXED) */}
+                <div 
+                    className="fixed inset-0 z-0"
+                    style={{ 
+                        backgroundImage: "url('/images/gallery/background.png')", 
+                        backgroundSize: "cover", 
+                        backgroundPosition: "center" 
+                    }}
+                >
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-transparent"></div>
+                </div>
+
+                {/* 2. CONTENT AREA */}
+                <div className="relative z-10 py-10 md:py-14 px-6 max-w-6xl mx-auto">
+                    
+                    <header className="text-center mb-10">
+                        <motion.div 
+                            initial={{ opacity: 0, y: -20 }} 
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <h1 className="text-5xl md:text-6xl font-black text-white mb-1 tracking-tighter drop-shadow-2xl">
+                                GALLERY
+                            </h1>
+                            <p className="text-gray-300 uppercase tracking-[0.3em] text-[10px] md:text-xs font-bold opacity-80">
+                                Our Journey & Events
+                            </p>
+                            <div className="w-16 h-1 bg-red-600 mx-auto mt-4 rounded-full shadow-[0_0_15px_rgba(220,38,38,0.5)]"></div>
+                        </motion.div>
                     </header>
 
                     {/* TAB TAHUN */}
-                    <div className="flex justify-center flex-wrap gap-3 mb-16">
+                    <div className="flex justify-center flex-wrap gap-3 mb-10">
                         {years.map((year) => (
                             <button
                                 key={year}
                                 onClick={() => setActiveYear(year)}
-                                className={`px-10 py-3 rounded-2xl font-bold transition-all duration-300 ${
+                                className={`px-8 py-2.5 rounded-xl font-black transition-all duration-300 uppercase tracking-widest text-[10px] ${
                                     activeYear === year 
-                                    ? 'bg-[#8B0000] text-white shadow-2xl -translate-y-1' 
-                                    : 'bg-white text-gray-400 border border-gray-100 hover:border-[#8B0000] hover:text-[#8B0000]'
+                                    ? 'bg-red-600 text-white shadow-lg -translate-y-1' 
+                                    : 'bg-white/10 text-white/60 border border-white/10 hover:border-white/30 hover:text-white backdrop-blur-md'
                                 }`}
                             >
                                 {year}
@@ -70,69 +91,79 @@ export default function Gallery() {
                         ))}
                     </div>
 
-                   {/* CONTENT GALLERY */}
-<div className="max-w-5xl mx-auto space-y-12 px-4 md:px-8"> {/* Tambah padding kiri kanan yang lebih responsif */}
-    <AnimatePresence mode="wait">
-        <motion.div
-            key={activeYear}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -30 }}
-            transition={{ duration: 0.4 }}
-        >
-            {galleryData[activeYear]?.length > 0 ? (
-                galleryData[activeYear].map((event, index) => (
-                    <div key={index} className="mb-10">
-                        {/* Header Event - Kita buat lebih 'airy' */}
-                        <div className="border-l-4 border-[#8B0000] pl-5 py-1 mb-8">
-                            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 uppercase tracking-tight">
-                                {event.title}
-                            </h2>
-                            <p className="text-gray-500 text-base md:text-lg mt-2 italic max-w-2xl">
-                                "{event.description}"
-                            </p>
-                        </div>
-                        
-                        {/* Flexible Media Grid - Ditambah GAP yang lebih selesa */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"> 
-                            {event.media.map((item, mIndex) => (
-                                <div 
-                                    key={mIndex}
-                                    className="relative overflow-hidden rounded-2xl shadow-md bg-black aspect-[4/3] w-full max-w-[400px] mx-auto" 
-                                    /* max-w-[400px] & mx-auto supaya bila skrin kecil, gambar tak jadi gergasi */
-                                >
-                                    {item.type === 'image' ? (
-                                        <img 
-                                            src={item.url} 
-                                            alt={event.title} 
-                                            className="w-full h-full object-cover"
-                                        />
-                                    ) : (
-                                        <iframe
-                                            className="w-full h-full"
-                                            src={`https://www.youtube.com/embed/${item.url}`}
-                                            title="YouTube video player"
-                                            frameBorder="0"
-                                            allowFullScreen
-                                        ></iframe>
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-                        {/* Garisan pemisah yang lebih halus */}
-                        <div className="mt-8 border-b border-gray-100"></div>
+                    {/* MAIN CONTENT PANEL */}
+                    <div className="max-w-5xl mx-auto">
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={activeYear}
+                                initial={{ opacity: 0, scale: 0.98 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 1.02 }}
+                                transition={{ duration: 0.4 }}
+                                className="bg-white/[0.03] backdrop-blur-3xl rounded-[3rem] border border-white/10 p-8 md:p-14 shadow-2xl"
+                            >
+                                {galleryData[activeYear]?.length > 0 ? (
+                                    galleryData[activeYear].map((event, index) => (
+                                        <div key={index} className="mb-20 last:mb-0">
+                                            
+                                            {/* Header Event */}
+                                            <div className="border-l-4 border-red-600 pl-6 mb-10">
+                                                <h2 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight leading-none">
+                                                    {event.title}
+                                                </h2>
+                                                {/* Deskripsi ditukar ke PUTIH */}
+                                                <p className="text-white text-sm md:text-base mt-3 italic max-w-2xl font-medium opacity-90">
+                                                    "{event.description}"
+                                                </p>
+                                            </div>
+                                            
+                                            {/* Media Grid */}
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"> 
+                                                {event.media.map((item, mIndex) => (
+                                                    <motion.div 
+                                                        key={mIndex}
+                                                        whileHover={{ scale: 1.03 }}
+                                                        className="relative overflow-hidden rounded-[2rem] shadow-2xl bg-black/40 aspect-[4/3] w-full border border-white/5 group" 
+                                                    >
+                                                        {item.type === 'image' ? (
+                                                            <img 
+                                                                src={item.url} 
+                                                                alt={event.title} 
+                                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                                loading="lazy"
+                                                            />
+                                                        ) : (
+                                                            <iframe
+                                                                className="w-full h-full"
+                                                                src={`https://www.youtube.com/embed/${item.url}`}
+                                                                title="YouTube video player"
+                                                                frameBorder="0"
+                                                                allowFullScreen
+                                                            ></iframe>
+                                                        )}
+                                                        <div className="absolute inset-0 bg-red-600/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+                                                    </motion.div>
+                                                ))}
+                                            </div>
+                                            
+                                            {index !== galleryData[activeYear].length - 1 && (
+                                                <div className="mt-16 h-[1px] w-full bg-gradient-to-r from-red-600/30 to-transparent"></div>
+                                            )}
+                                        </div>
+                                    ))
+                                ) : (
+                                    <div className="text-center py-20">
+                                        <p className="text-white/30 text-xl font-black uppercase tracking-widest">No Events Found</p>
+                                        <div className="mt-2 text-red-600/50 text-xs uppercase font-bold tracking-tighter">Stay tuned for future updates</div>
+                                    </div>
+                                )}
+                            </motion.div>
+                        </AnimatePresence>
                     </div>
-                ))
-            ) : (
-                <div className="text-center py-20 bg-white rounded-3xl shadow-inner border border-gray-50">
-                    <p className="text-gray-400 text-xl font-medium">Tiada rekod acara ditemui.</p>
-                </div>
-            )}
-        </motion.div>
-    </AnimatePresence>
-</div>
                 </div>
             </div>
         </AuthenticatedLayout>
     );
 }
+
+Gallery.layout = page => <AuthenticatedLayout children={page} />;

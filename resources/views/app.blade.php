@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        @if(config('app.env') !== 'production')
+        <meta name="robots" content="noindex, nofollow">
+        @endif
 	<link rel="icon" type="image/x-icon" href="/favicon.ico?v=1">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">

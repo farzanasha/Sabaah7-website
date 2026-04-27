@@ -1,6 +1,6 @@
 {
-  "_AuthenticatedLayout-Cqb8Rpnk.js": {
-    "file": "assets/AuthenticatedLayout-Cqb8Rpnk.js",
+  "_AuthenticatedLayout-CCFnn5OM.js": {
+    "file": "assets/AuthenticatedLayout-CCFnn5OM.js",
     "name": "AuthenticatedLayout",
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
@@ -47,13 +47,13 @@
     ]
   },
   "resources/js/Pages/About.jsx": {
-    "file": "assets/About-B59cK8gH.js",
+    "file": "assets/About-D7jG8py1.js",
     "name": "About",
     "src": "resources/js/Pages/About.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-Cqb8Rpnk.js"
+      "_AuthenticatedLayout-CCFnn5OM.js"
     ]
   },
   "resources/js/Pages/Auth/ConfirmPassword.jsx": {
@@ -132,54 +132,54 @@
     ]
   },
   "resources/js/Pages/Businesses.jsx": {
-    "file": "assets/Businesses-Dyv2F3RN.js",
+    "file": "assets/Businesses-eqkrTKV0.js",
     "name": "Businesses",
     "src": "resources/js/Pages/Businesses.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-Cqb8Rpnk.js"
+      "_AuthenticatedLayout-CCFnn5OM.js"
     ]
   },
   "resources/js/Pages/Contact.jsx": {
-    "file": "assets/Contact-CEKSr80d.js",
+    "file": "assets/Contact-DxTlVXMm.js",
     "name": "Contact",
     "src": "resources/js/Pages/Contact.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-Cqb8Rpnk.js"
+      "_AuthenticatedLayout-CCFnn5OM.js"
     ]
   },
   "resources/js/Pages/Gallery.jsx": {
-    "file": "assets/Gallery-BrG5spou.js",
+    "file": "assets/Gallery-DdGqBvLP.js",
     "name": "Gallery",
     "src": "resources/js/Pages/Gallery.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-Cqb8Rpnk.js"
+      "_AuthenticatedLayout-CCFnn5OM.js"
     ]
   },
   "resources/js/Pages/Home.jsx": {
-    "file": "assets/Home-Dbspi-KZ.js",
+    "file": "assets/Home-3YJWsdZn.js",
     "name": "Home",
     "src": "resources/js/Pages/Home.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-Cqb8Rpnk.js"
+      "_AuthenticatedLayout-CCFnn5OM.js"
     ]
   },
   "resources/js/Pages/Profile/Edit.jsx": {
-    "file": "assets/Edit-B_M3rA7m.js",
+    "file": "assets/Edit-DLXP2vBc.js",
     "name": "Edit",
     "src": "resources/js/Pages/Profile/Edit.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
       "resources/js/Pages/Profile/Partials/DeleteUserForm.jsx",
-      "_AuthenticatedLayout-Cqb8Rpnk.js",
+      "_AuthenticatedLayout-CCFnn5OM.js",
       "resources/js/Pages/Profile/Partials/UpdatePasswordForm.jsx",
       "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.jsx"
     ]
@@ -223,37 +223,37 @@
     ]
   },
   "resources/js/Pages/products/JuniorIceCream.jsx": {
-    "file": "assets/JuniorIceCream-rPl5aHIM.js",
+    "file": "assets/JuniorIceCream-D7rh_XI4.js",
     "name": "JuniorIceCream",
     "src": "resources/js/Pages/products/JuniorIceCream.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-Cqb8Rpnk.js"
+      "_AuthenticatedLayout-CCFnn5OM.js"
     ]
   },
   "resources/js/Pages/products/ProductDetail.jsx": {
-    "file": "assets/ProductDetail-DV_XZR44.js",
+    "file": "assets/ProductDetail-C0y0KH_h.js",
     "name": "ProductDetail",
     "src": "resources/js/Pages/products/ProductDetail.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-Cqb8Rpnk.js"
+      "_AuthenticatedLayout-CCFnn5OM.js"
     ]
   },
   "resources/js/Pages/products/index.jsx": {
-    "file": "assets/products-BKyTikiI.js",
+    "file": "assets/products-Co9bQvC-.js",
     "name": "products",
     "src": "resources/js/Pages/products/index.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-Cqb8Rpnk.js"
+      "_AuthenticatedLayout-CCFnn5OM.js"
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-DYiCV3mt.js",
+    "file": "assets/app-CewuZ_Bt.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
@@ -281,7 +281,7 @@
       "resources/js/Pages/products/index.jsx"
     ],
     "css": [
-      "assets/app-Z4_nTFai.css"
+      "assets/app-DaYwXhZX.css"
     ]
   }
 }
