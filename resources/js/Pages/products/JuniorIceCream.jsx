@@ -104,7 +104,7 @@ export default function JuniorIceCream() {
                             alt="Logo Aiskrim Junior" 
                         />
                         <h1 className="text-5xl md:text-7xl font-black title-3d uppercase tracking-wider text-center">
-                            Aiskrim Junior
+                            JUNIOR ICE CREAM
                         </h1>
                     </div>
                 </div>
@@ -118,7 +118,7 @@ export default function JuniorIceCream() {
                         viewport={{ once: true }}
                         className="glass-card mb-10 text-center scroll-mt-24"
                     >
-                        <h2 className="text-3xl font-bold text-lime-900 mb-4">Latar Belakang</h2>
+                        <h2 className="text-3xl font-bold text-lime-900 mb-4">About Junior Ice Cream</h2>
                         <p className="text-lime-800 leading-relaxed text-lg">
                             Aiskrim Junior bermula sebagai perniagaan keluarga yang mementingkan kualiti dan rasa asli aiskrim Malaysia. Kami membawa kegembiraan ke setiap majlis anda.
                         </p>
@@ -138,7 +138,7 @@ export default function JuniorIceCream() {
 
                     {/* ID PRODUCTS: Tajuk Pakej */}
                     <div id="products" className="text-center mb-10 scroll-mt-24">
-                        <h2 className="text-4xl font-black text-lime-900 uppercase">Pakej & Produk Kami</h2>
+                        <h2 className="text-4xl font-black text-lime-900 uppercase">Our Packages</h2>
                         <div className="w-24 h-1 bg-lime-500 mx-auto mt-2"></div>
                     </div>
 

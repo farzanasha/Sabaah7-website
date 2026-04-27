@@ -7,6 +7,7 @@ use Inertia\Inertia;
 Route::get('/', fn () => Inertia::render('Home'))->name('home');
 Route::get('/about', fn () => Inertia::render('About'))->name('about');
 Route::get('/businesses', fn () => Inertia::render('Businesses'))->name('businesses');
+Route::get('/gallery', fn () => Inertia::render('Gallery'))->name('gallery');
 Route::get('/contact', fn () => Inertia::render('Contact'))->name('contact');
 
 // --- SISTEM PRODUK (FOLDER products) ---
