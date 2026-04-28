@@ -7,20 +7,13 @@ export default function AuthenticatedLayout({ children }) {
     return (
         <div className="min-h-screen bg-white text-white relative">
             
-            {/* 1. OVERLAY HITAM LUTSINAR (Dasar Gelap) */}
-            <div className="fixed inset-0 bg-black/85 z-0 pointer-events-none"></div>
-
+            {/* 1. OVERLAY HITAM SOLID (Gelap Sepenuhnya) */}
+<div className="fixed inset-0 bg-black z-0 pointer-events-none"></div>
             {/* 2. KESAN JARING / DOT MATRIX (Efek Timbul)
                - Kita guna background-image dengan radial-gradient untuk buat bintik halus.
                - 'bg-[length:4px_4px]' mengawal saiz jaring (kecil = halus).
             */}
-            <div 
-                className="fixed inset-0 z-0 pointer-events-none opacity-30"
-                style={{
-                    backgroundImage: `radial-gradient(circle, #ffffff 1px, transparent 1px)`,
-                    backgroundSize: '3px 3px' 
-                }}
-            ></div>
+            
 
             {/* NAVBAR */}
             <div className="relative z-20">

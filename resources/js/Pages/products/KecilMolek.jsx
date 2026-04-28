@@ -1,0 +1,300 @@
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+import { Head } from '@inertiajs/react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+export default function KecikMolek() {
+    const [activeTab, setActiveTab] = useState('about');
+
+    return (
+        <>
+            <style dangerouslySetInnerHTML={{ __html: `
+                nav { background-color: #4a0e1c !important; } 
+                nav a, nav button { color: #d1d5db !important; }
+                
+                .title-3d-kecik { 
+                    color: white; 
+                    -webkit-text-stroke: 1px #d1d5db; 
+                    text-shadow: 4px 4px 0px #2d050d;
+                }
+            `}} />
+
+            <Head title="Kecik Molek Tailor - Fine Craftsmanship" />
+            
+            <div className="relative min-h-screen w-full bg-[#1a0505] overflow-x-hidden font-sans">
+                
+                {/* 1. BACKGROUND IMAGE */}
+                <div 
+                    className="fixed inset-0 z-0"
+                    style={{ 
+                        backgroundImage: "url('/images/products/background/kecil.png')", 
+                        backgroundSize: "cover", 
+                        backgroundPosition: "center" 
+                    }}
+                />
+
+                {/* 2. CONTENT AREA */}
+                <div className="relative z-10 mt-[-1px]">
+                    
+                    {/* Hero Section */}
+                    <div className="pt-20 pb-2 flex flex-col items-center justify-center text-center px-6">
+                        <motion.img 
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            src="/images/logos/kecil.png" 
+                            className="w-48 md:w-64 object-contain mb-6 drop-shadow-2xl" 
+                            alt="Kecik Molek Logo" 
+                        />
+                        <h1 className="text-4xl md:text-7xl font-black title-3d-kecik uppercase tracking-tighter leading-none">
+                            KECIK MOLEK
+                        </h1>
+                        <p className="mt-4 text-[#4a0e1c] bg-white/60 backdrop-blur-md px-4 py-1.5 rounded-full font-black tracking-widest text-[11px] md:text-sm uppercase italic shadow-sm inline-block mx-auto">
+                            Seutas Harapan, Sepasang Impian
+                        </p>
+                    </div>
+
+                    {/* TAB NAVIGATION */}
+                    <div className="flex justify-center mt-6 mb-10 relative z-10 px-4">
+                        <div className="bg-[#4a0e1c]/90 backdrop-blur-xl p-2 rounded-[2.5rem] border border-white/20 shadow-2xl flex gap-2">
+                            <button
+                                onClick={() => setActiveTab('about')}
+                                className={`flex items-center gap-3 px-8 py-3 rounded-full font-black text-xs md:text-sm transition-all duration-300 border ${
+                                    activeTab === 'about'
+                                        ? 'bg-white text-[#4a0e1c] border-white scale-105 shadow-xl'
+                                        : 'bg-white/5 text-white border-white/10 hover:bg-white/10'
+                                }`}
+                            >
+                                <span>🏠</span>
+                                <span>ABOUT US</span>
+                            </button>
+
+                            <button
+                                onClick={() => setActiveTab('services')}
+                                className={`flex items-center gap-3 px-8 py-3 rounded-full font-black text-xs md:text-sm transition-all duration-300 border ${
+                                    activeTab === 'services'
+                                        ? 'bg-white text-[#4a0e1c] border-white scale-105 shadow-xl'
+                                        : 'bg-white/5 text-white border-white/10 hover:bg-white/10'
+                                }`}
+                            >
+                                <span>🪡</span>
+                                <span>SERVICES</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div className="max-w-6xl mx-auto px-6 pb-24">
+                        <AnimatePresence mode="wait">
+                            
+                            {activeTab === 'about' && (
+                                <motion.div 
+                                    key="about-tab"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -20 }}
+                                    className="space-y-10"
+                                >
+                                    {/* STORY SECTION */}
+                                    <div className="bg-[#4a0e1c]/80 backdrop-blur-2xl rounded-[3rem] border border-white/20 p-8 md:p-16 shadow-2xl">
+                                        <div className="flex flex-col lg:flex-row gap-12">
+                                            <div className="w-full lg:w-3/5 space-y-6">
+                                                <h2 className="text-5xl font-black text-white uppercase tracking-tighter leading-none">
+                                                    THE <span className="text-gray-300">CRAFT</span>
+                                                </h2>
+                                                <p className="text-white text-xl font-bold">
+                                                    Inspiration Name: <span className="bg-white text-[#4a0e1c] px-2 py-0.5 rounded-lg">Siti Aminah</span>.
+                                                </p>
+                                                <p className="text-white font-medium leading-relaxed text-justify bg-black/20 p-6 rounded-2xl border-l-4 border-white">
+                                                    "Kecik Molek is a business providing tailoring and alteration services for both women's and men's clothing. The business came into existence after the founder gained years of experience working for others."
+                                                </p>
+                                                <p className="text-white/70 text-sm leading-relaxed text-justify">
+                                                    Today, Kecik Molek operates independently, possessing its own sewing machines and managing its own orders. The operation originally started in Negeri Sembilan and has now relocated to Melaka.
+                                                </p>
+                                            </div>
+
+                                            <div className="w-full lg:w-2/5 flex flex-col gap-4">
+                                                <div className="bg-white/10 p-8 rounded-[2.5rem] border border-white/10 text-center">
+                                                    <p className="text-5xl font-black text-white">EST.</p>
+                                                    <p className="text-2xl font-black text-gray-300 mt-1 uppercase tracking-widest italic">Since 2016</p>
+                                                </div>
+                                                <div className="bg-white p-8 rounded-[2.5rem] text-center shadow-xl">
+                                                    <p className="text-[10px] uppercase font-black text-[#4a0e1c] tracking-widest mb-1">SSM Registered</p>
+                                                    <p className="text-2xl font-black text-[#4a0e1c]">2026 ✅</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* VISION & MISSION */}
+                                    <div className="grid md:grid-cols-2 gap-8 items-stretch">
+                                        <div className="bg-white p-10 rounded-[3rem] border border-white shadow-2xl flex flex-col justify-center">
+                                            <div className="mb-6">
+                                                <p className="text-[10px] font-black tracking-[0.4em] uppercase text-[#4a0e1c] opacity-60 mb-2">The Vision</p>
+                                                <h3 className="text-3xl font-black text-[#4a0e1c] uppercase tracking-tighter">Global Boutique</h3>
+                                                <div className="w-12 h-1 bg-[#4a0e1c] mt-2 rounded-full"></div>
+                                            </div>
+                                            <p className="text-[#4a0e1c] text-lg md:text-xl font-bold leading-relaxed italic">
+                                                "To become a premier tailoring boutique that democratizes high-quality fashion through fine, fast, and affordable craftsmanship for a global audience."
+                                            </p>
+                                        </div>
+
+                                        <div className="bg-[#4a0e1c]/80 backdrop-blur-xl p-10 rounded-[3rem] border border-white/20 text-white shadow-2xl flex flex-col justify-center">
+                                            <div className="mb-8">
+                                                <p className="text-[10px] font-black tracking-[0.4em] uppercase text-gray-300 mb-2">Our Mission</p>
+                                                <h3 className="text-3xl font-black text-white uppercase tracking-tighter">3 Core Pillars</h3>
+                                                <div className="w-12 h-1 bg-white mt-2 rounded-full"></div>
+                                            </div>
+
+                                            <div className="space-y-6">
+                                                <div className="flex gap-4">
+                                                    <span className="text-[#d1d5db] font-black text-xl italic opacity-50">01</span>
+                                                    <div className="space-y-1">
+                                                        <p className="text-white font-black text-sm uppercase tracking-widest">Craftsmanship Precision</p>
+                                                        <p className="text-gray-300 text-[11px] leading-tight opacity-80">Meticulous technical aspects in every inch of stitching.</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex gap-4">
+                                                    <span className="text-[#d1d5db] font-black text-xl italic opacity-50">02</span>
+                                                    <div className="space-y-1">
+                                                        <p className="text-white font-black text-sm uppercase tracking-widest">Fashion Inclusivity</p>
+                                                        <p className="text-gray-300 text-[11px] leading-tight opacity-80">Bridging the gap between luxury wear and everyday clothing.</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex gap-4">
+                                                    <span className="text-[#d1d5db] font-black text-xl italic opacity-50">03</span>
+                                                    <div className="space-y-1">
+                                                        <p className="text-white font-black text-sm uppercase tracking-widest">Operational Efficiency</p>
+                                                        <p className="text-gray-300 text-[11px] leading-tight opacity-80">Fast production without compromising the final quality.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* STRATEGIC OBJECTIVES */}
+                                    <div className="bg-white/5 backdrop-blur-2xl p-10 md:p-16 rounded-[4rem] border border-white/10 shadow-xl text-white">
+                                        <h3 className="text-2xl font-black text-white mb-12 uppercase tracking-widest text-center">Strategic Objectives</h3>
+                                        <div className="grid md:grid-cols-3 gap-12">
+                                            <div className="space-y-4 text-center">
+                                                <div className="text-4xl">📈</div>
+                                                <p className="text-sm font-medium leading-relaxed opacity-80 italic">
+                                                    "Expanding service reach from individual customers to corporate contracts and large-scale uniform supply."
+                                                </p>
+                                            </div>
+                                            <div className="space-y-4 text-center">
+                                                <div className="text-4xl">🎯</div>
+                                                <p className="text-sm font-medium leading-relaxed opacity-80 italic">
+                                                    "Achieving a 'zero-defect' standard in every tailored unit through strict quality control processes."
+                                                </p>
+                                            </div>
+                                            <div className="space-y-4 text-center">
+                                                <div className="text-4xl">📱</div>
+                                                <p className="text-sm font-medium leading-relaxed opacity-80 italic">
+                                                    "Introducing a digital ordering system to facilitate access for customers from various locations."
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* CONTACT INFO & MAP - FULL VERSION WITH SOCIALS */}
+                                    <div className="bg-[#4a0e1c]/90 rounded-[3rem] border border-white/20 overflow-hidden shadow-2xl flex flex-col lg:flex-row">
+                                        <div className="p-10 md:p-12 space-y-8 lg:w-1/2">
+                                            <h2 className="text-3xl font-black text-white uppercase tracking-tighter">Visit the Studio</h2>
+                                            <div className="space-y-6">
+                                                <div className="flex items-start gap-3">
+                                                    <span className="text-xl">📍</span>
+                                                    <p className="text-white font-bold text-sm italic">Lot 2421, Jalan Pokok Tanjung, 78300 Masjid Tanah, Melaka.</p>
+                                                </div>
+                                                
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                    <div className="space-y-1">
+                                                        <p className="text-[10px] font-black text-gray-300 uppercase tracking-widest">Operating Hours</p>
+                                                        <p className="text-white font-bold text-sm">9:00 AM – 6:00 PM</p>
+                                                    </div>
+                                                    <div className="space-y-1">
+                                                        <p className="text-[10px] font-black text-gray-300 uppercase tracking-widest">Contact (PIC)</p>
+                                                        <p className="text-white font-bold text-sm">Pn Siti Aminah</p>
+                                                    </div>
+                                                </div>
+
+                                                <div className="space-y-1">
+                                                    <p className="text-[10px] font-black text-gray-300 uppercase tracking-widest">Email Address</p>
+                                                    <p className="text-white font-bold text-sm break-all">aminahadzmi.sabaah7@gmail.com</p>
+                                                </div>
+
+                                                {/* SOCIAL MEDIA BUTTONS - ADDED BACK HERE */}
+                                                <div className="flex flex-wrap gap-3 pt-4">
+                                                    {/* <a 
+                                                        href="https://www.facebook.com/people/Warong-Soja/" 
+                                                        target="_blank" 
+                                                        className="flex items-center gap-2 bg-white/5 hover:bg-white text-white hover:text-[#4a0e1c] px-4 py-2 rounded-full border border-white/20 text-[10px] md:text-xs font-black transition-all group"
+                                                    >
+                                                        <i className="fab fa-facebook-f"></i>
+                                                        <span>Facebook</span>
+                                                    </a> */}
+
+                                                    <a 
+                                                        href="https://instagram.com/kecik.molek_situkangjahit" 
+                                                        target="_blank" 
+                                                        className="flex items-center gap-2 bg-white/5 hover:bg-white text-white hover:text-[#4a0e1c] px-4 py-2 rounded-full border border-white/20 text-[10px] md:text-xs font-black transition-all group"
+                                                    >
+                                                        <i className="fab fa-instagram"></i>
+                                                        <span>@kecikmolek</span>
+                                                    </a>
+
+                                                    <a 
+                                                        href="https://tiktok.com/@kecikmolek_situkangjahit" 
+                                                        target="_blank" 
+                                                        className="flex items-center gap-2 bg-white/5 hover:bg-white text-white hover:text-[#4a0e1c] px-4 py-2 rounded-full border border-white/20 text-[10px] md:text-xs font-black transition-all group"
+                                                    >
+                                                        <i className="fab fa-tiktok"></i>
+                                                        <span>@kecikmolek</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="h-[350px] lg:h-auto lg:w-1/2 bg-white relative min-h-[350px]">
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.459487900455!2d102.09119047472718!3d2.3511790976283464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d1ff6b3a5b9bb3%3A0xd28fb2d50d447f6!2sJalan%20Pokok%20Tanjung%2C%2078300%20Masjid%20Tanah%2C%20Melaka!5e0!3m2!1sen!2smy!4v1777362441778!5m2!1sen!2smy" className="absolute inset-0 w-full h-full border-0" allowFullScreen="" loading="lazy"></iframe>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            )}
+
+                            {activeTab === 'services' && (
+                                <motion.div 
+                                    key="services-tab"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -20 }}
+                                    className="flex flex-col items-center justify-center py-20 text-center space-y-10"
+                                >
+                                    <div className="space-y-4">
+                                        <div className="text-8xl animate-bounce">🪡</div>
+                                        <h2 className="text-6xl md:text-7xl font-black text-white uppercase tracking-tighter italic drop-shadow-[0_2px_2px_rgba(74,14,28,1)]">
+                                            Coming Soon
+                                        </h2>
+                                        <p className="text-white font-bold max-w-md mx-auto leading-relaxed opacity-80">
+                                            Our stitching studio is preparing new slots. <br/>Fine tailoring services will be available soon.
+                                        </p>
+                                    </div>
+
+                                    <motion.a 
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        href="https://wa.me/601111127295?text=Hi%20Siti%20Aminah!%20I%20have%20an%20inquiry%20about%20Kecik%20Molek%20tailoring%20services." 
+                                        target="_blank"
+                                        className="bg-green-600 hover:bg-green-500 text-white font-black px-12 py-5 rounded-2xl flex items-center gap-4 shadow-xl transition-all uppercase tracking-widest text-lg"
+                                    >
+                                        <i className="fab fa-whatsapp text-2xl"></i>
+                                        Inquiry via Siti Aminah
+                                    </motion.a>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+}
+
+KecikMolek.layout = page => <AuthenticatedLayout children={page} />;

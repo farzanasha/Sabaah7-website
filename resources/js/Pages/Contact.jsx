@@ -105,13 +105,13 @@ export default function Contact() {
                             
                             <div className="w-full flex-grow min-h-[350px] rounded-[2.5rem] overflow-hidden border border-white/20 bg-white/5 shadow-inner relative">
                                 <iframe 
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15936.433833285915!2d101.70014295!3d3.06431985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc35661f059349%3A0x28054044f128c7f!2sCheras%2C%20Kuala%20Lumpur!5e0!3m2!1sen!2smy!4v1714234567890!5m2!1sen!2smy" 
-                                    width="100%" 
-                                    height="100%" 
-                                    style={{ border: 0, filter: 'grayscale(1) contrast(1.2) opacity(0.8)' }} 
-                                    allowFullScreen="" 
-                                    loading="lazy"
-                                ></iframe>
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15936.433833285915!2d101.70014295!3d3.06431985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc35661f059349%3A0x28054044f128c7f!2sCheras%2C%20Kuala%20Lumpur!5e0!3m2!1sen!2smy!4v1714234567890!5m2!1sen!2smy" 
+                                width="100%" 
+                                height="100%" 
+                                style={{ border: 0 }} 
+                                allowFullScreen="" 
+                                loading="lazy"
+                            ></iframe>
                                 
                                 <div className="absolute bottom-4 left-4 bg-red-600 text-white px-4 py-1.5 rounded-full text-[9px] font-black tracking-widest uppercase flex items-center gap-2 z-10 shadow-lg">
                                     <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>

@@ -1,6 +1,6 @@
 {
-  "_AuthenticatedLayout-c05mXi-P.js": {
-    "file": "assets/AuthenticatedLayout-c05mXi-P.js",
+  "_AuthenticatedLayout-BTJ4zx3p.js": {
+    "file": "assets/AuthenticatedLayout-BTJ4zx3p.js",
     "name": "AuthenticatedLayout",
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
@@ -47,13 +47,13 @@
     ]
   },
   "resources/js/Pages/About.jsx": {
-    "file": "assets/About-B-bqVacJ.js",
+    "file": "assets/About-BmE4jbuJ.js",
     "name": "About",
     "src": "resources/js/Pages/About.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-c05mXi-P.js"
+      "_AuthenticatedLayout-BTJ4zx3p.js"
     ]
   },
   "resources/js/Pages/Auth/ConfirmPassword.jsx": {
@@ -132,54 +132,54 @@
     ]
   },
   "resources/js/Pages/Businesses.jsx": {
-    "file": "assets/Businesses-p1XuJVay.js",
+    "file": "assets/Businesses-D5GVrAd6.js",
     "name": "Businesses",
     "src": "resources/js/Pages/Businesses.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-c05mXi-P.js"
+      "_AuthenticatedLayout-BTJ4zx3p.js"
     ]
   },
   "resources/js/Pages/Contact.jsx": {
-    "file": "assets/Contact-BzPLEwu5.js",
+    "file": "assets/Contact-JDPC9BqD.js",
     "name": "Contact",
     "src": "resources/js/Pages/Contact.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-c05mXi-P.js"
+      "_AuthenticatedLayout-BTJ4zx3p.js"
     ]
   },
   "resources/js/Pages/Gallery.jsx": {
-    "file": "assets/Gallery-izMFwTaI.js",
+    "file": "assets/Gallery-D4uiglpa.js",
     "name": "Gallery",
     "src": "resources/js/Pages/Gallery.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-c05mXi-P.js"
+      "_AuthenticatedLayout-BTJ4zx3p.js"
     ]
   },
   "resources/js/Pages/Home.jsx": {
-    "file": "assets/Home-B0WpmcoV.js",
+    "file": "assets/Home-BZONVvHc.js",
     "name": "Home",
     "src": "resources/js/Pages/Home.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-c05mXi-P.js"
+      "_AuthenticatedLayout-BTJ4zx3p.js"
     ]
   },
   "resources/js/Pages/Profile/Edit.jsx": {
-    "file": "assets/Edit-DZdP-JmH.js",
+    "file": "assets/Edit-jXQgPsIk.js",
     "name": "Edit",
     "src": "resources/js/Pages/Profile/Edit.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
       "resources/js/Pages/Profile/Partials/DeleteUserForm.jsx",
-      "_AuthenticatedLayout-c05mXi-P.js",
+      "_AuthenticatedLayout-BTJ4zx3p.js",
       "resources/js/Pages/Profile/Partials/UpdatePasswordForm.jsx",
       "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.jsx"
     ]
@@ -223,37 +223,67 @@
     ]
   },
   "resources/js/Pages/products/JuniorIceCream.jsx": {
-    "file": "assets/JuniorIceCream-CI4uekli.js",
+    "file": "assets/JuniorIceCream-BrwOaI2E.js",
     "name": "JuniorIceCream",
     "src": "resources/js/Pages/products/JuniorIceCream.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-c05mXi-P.js"
+      "_AuthenticatedLayout-BTJ4zx3p.js"
+    ]
+  },
+  "resources/js/Pages/products/KecilMolek.jsx": {
+    "file": "assets/KecilMolek-BqgfuEWN.js",
+    "name": "KecilMolek",
+    "src": "resources/js/Pages/products/KecilMolek.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_jsx-runtime-D9CfDZ_c.js",
+      "_AuthenticatedLayout-BTJ4zx3p.js"
+    ]
+  },
+  "resources/js/Pages/products/MeeLantak.jsx": {
+    "file": "assets/MeeLantak-DYuDvBz9.js",
+    "name": "MeeLantak",
+    "src": "resources/js/Pages/products/MeeLantak.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_jsx-runtime-D9CfDZ_c.js",
+      "_AuthenticatedLayout-BTJ4zx3p.js"
     ]
   },
   "resources/js/Pages/products/ProductDetail.jsx": {
-    "file": "assets/ProductDetail-s16OBL8l.js",
+    "file": "assets/ProductDetail-UjQjvYPt.js",
     "name": "ProductDetail",
     "src": "resources/js/Pages/products/ProductDetail.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-c05mXi-P.js"
+      "_AuthenticatedLayout-BTJ4zx3p.js"
+    ]
+  },
+  "resources/js/Pages/products/Soja.jsx": {
+    "file": "assets/Soja-Bi2Fhnmt.js",
+    "name": "Soja",
+    "src": "resources/js/Pages/products/Soja.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_jsx-runtime-D9CfDZ_c.js",
+      "_AuthenticatedLayout-BTJ4zx3p.js"
     ]
   },
   "resources/js/Pages/products/index.jsx": {
-    "file": "assets/products-DHw71vnL.js",
+    "file": "assets/products-VCQPbEtC.js",
     "name": "products",
     "src": "resources/js/Pages/products/index.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-c05mXi-P.js"
+      "_AuthenticatedLayout-BTJ4zx3p.js"
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-vrELowmR.js",
+    "file": "assets/app-BSDlKI4A.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
@@ -277,11 +307,14 @@
       "resources/js/Pages/Profile/Partials/UpdatePasswordForm.jsx",
       "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.jsx",
       "resources/js/Pages/products/JuniorIceCream.jsx",
+      "resources/js/Pages/products/KecilMolek.jsx",
+      "resources/js/Pages/products/MeeLantak.jsx",
       "resources/js/Pages/products/ProductDetail.jsx",
+      "resources/js/Pages/products/Soja.jsx",
       "resources/js/Pages/products/index.jsx"
     ],
     "css": [
-      "assets/app-D9xBbC-6.css"
+      "assets/app-8svd_wl-.css"
     ]
   }
 }

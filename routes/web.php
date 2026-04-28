@@ -17,10 +17,8 @@ Route::get('/products', fn () => Inertia::render('products/index'))->name('produ
 
 // Sub-Pages Produk
 Route::get('/products/junior', fn () => Inertia::render('products/JuniorIceCream'))->name('products.junior');
-
-// Tambah route di bawah ini bila anda dah create fail .jsx untuk bisnes lain nanti:
-// Route::get('/products/soja', fn () => Inertia::render('products/WarungSoja'))->name('products.soja');
-// Route::get('/products/meelantak', fn () => Inertia::render('products/MeeLantak'))->name('products.meelantak');
-// Route::get('/products/kecil-molek', fn () => Inertia::render('products/KecilMolek'))->name('products.kecil');
+Route::get('/products/soja', fn () => Inertia::render('products/Soja'))->name('products.soja');
+Route::get('/products/meelantak', fn () => Inertia::render('products/MeeLantak'))->name('products.meelantak');
+Route::get('/products/kecil-molek', fn () => Inertia::render('products/KecilMolek'))->name('products.kecil');
 
 require __DIR__.'/auth.php';

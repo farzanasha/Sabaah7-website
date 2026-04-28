@@ -207,33 +207,147 @@ export default function JuniorIceCream() {
                                                         allowFullScreen="" loading="lazy"
                                                     ></iframe>
                                                 </div>
-                                                <div className="px-2 space-y-1">
-                                                    <p className="text-xs font-black text-lime-800 uppercase tracking-widest">Contact En Dzul</p>
-                                                    <p className="text-sm font-bold text-lime-900">+60 11-1119 0377</p>
-                                                </div>
+
+                                                <div className="px-2 space-y-4">
+                                                    {/* Section Telefon */}
+                                                    <div className="flex items-center space-x-3">
+                                                        <div className="w-8 h-8 bg-lime-100 rounded-full flex items-center justify-center text-lime-700">
+                                                            <i className="fas fa-phone-alt text-xs"></i>
+                                                        </div>
+                                                        <div className="space-y-0.5">
+                                                            <p className="text-[10px] font-black text-lime-800 uppercase tracking-widest leading-none">Contact En Dzul</p>
+                                                            <p className="text-sm font-bold text-lime-900 leading-none">+60 11-1119 0377</p>
+                                                        </div>
+                                                    </div>
+
+                                                    {/* Section Emel */}
+                                                    <div className="flex items-center space-x-3">
+                                                        <div className="w-8 h-8 bg-lime-100 rounded-full flex items-center justify-center text-lime-700">
+                                                            <i className="fas fa-envelope text-xs"></i>
+                                                        </div>
+                                                        <div className="space-y-0.5">
+                                                            <p className="text-[10px] font-black text-lime-800 uppercase tracking-widest leading-none">Email Address</p>
+                                                            <p className="text-sm font-bold text-lime-900 leading-none">dzulqarnainadzmi@sabaah7.com</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="border-t border-lime-200/50 w-full pt-4">
+                                                        <div className="flex flex-wrap gap-3 items-center">
+                                                            
+                                                            {/* Instagram Badge */}
+                                                            <a 
+                                                                href="https://instagram.com/junioricecream_ampang" 
+                                                                target="_blank" 
+                                                                rel="noopener noreferrer"
+                                                                className="flex items-center space-x-2 bg-white/80 hover:bg-white px-3 py-1.5 rounded-full shadow-sm border border-lime-100 transition-all duration-300 hover:scale-105 group"
+                                                            >
+                                                                <i 
+                                                                    className="fab fa-instagram text-xl" 
+                                                                    style={{
+                                                                        background: "linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)",
+                                                                        WebkitBackgroundClip: "text",
+                                                                        WebkitTextFillColor: "transparent",
+                                                                        display: "inline-block"
+                                                                    }}
+                                                                ></i>
+                                                                <span className="text-xs font-bold text-lime-900">@junioricecream_ampang</span>
+                                                            </a>
+
+                                                            {/* TikTok Badge */}
+                                                            <a 
+                                                                href="https://tiktok.com/@junioricecream_ampang" 
+                                                                target="_blank" 
+                                                                rel="noopener noreferrer"
+                                                                className="flex items-center space-x-2 bg-white/80 hover:bg-white px-3 py-1.5 rounded-full shadow-sm border border-lime-100 transition-all duration-300 hover:scale-105"
+                                                            >
+                                                                <i className="fab fa-tiktok text-lg text-black"></i>
+                                                                <span className="text-xs font-bold text-lime-900">@junioricecream_ampang</span>
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+                                                </div>                                               
+                                       
                                             </motion.div>
 
                                             {/* IPOH BRANCH */}
-                                            <motion.div whileHover={{ y: -5 }} className="bg-lime-600/20 p-6 rounded-[3rem] border border-lime-400/30 shadow-xl space-y-5">
+                                            <motion.div whileHover={{ y: -5 }} className="bg-white/40 p-6 rounded-[3rem] border border-white/60 shadow-xl space-y-5">
                                                 <div className="flex justify-between items-start px-2">
                                                     <div>
-                                                        <div className="bg-blue-600 text-white px-5 py-1.5 rounded-full inline-block font-black text-[10px] tracking-widest shadow-md">IPOH BRANCH</div>
-                                                        <h3 className="text-xl font-black text-lime-900 mt-3 uppercase">Ipoh, Perak</h3>
+                                                        <div className="bg-lime-600 text-white px-5 py-1.5 rounded-full inline-block font-black text-[10px] tracking-widest shadow-md">AMPANG BRANCH</div>
+                                                        <h3 className="text-xl font-black text-lime-900 mt-3 uppercase">Ampang, Selangor</h3>
                                                     </div>
-                                                    <span className="text-3xl">🍦</span>
+                                                    <span className="text-3xl">📍</span>
                                                 </div>
                                                 <div className="h-[250px] rounded-[2.5rem] overflow-hidden border-4 border-white shadow-inner relative group">
                                                     <iframe 
-                                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.4326573862!2d101.0748!3d4.6644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31caec9e414c715f%3A0x6739665f8072049e!2sBulatan%20Sultan%20Azlan%20Shah!5e0!3m2!1sen!2smy!4v1714240000001!5m2!1sen!2smy" 
+                                                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15906.417858009137!2d101.0748!3d4.6644!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31ca93d5c3b7dc69%3A0xce40de9a0f76d945!2sBulatan%20Sultan%20Azlan%20Shah!5e0!3m2!1sen!2smy!4v1777359074604!5m2!1sen!2smy" 
                                                         className="absolute inset-0 w-full h-full border-0 grayscale group-hover:grayscale-0 transition-all duration-500" 
                                                         allowFullScreen="" loading="lazy"
                                                     ></iframe>
                                                 </div>
-                                                <div className="px-2 space-y-1">
-                                                    <p className="text-xs font-black text-lime-800 uppercase tracking-widest">Contact En Jainal</p>
-                                                    <p className="text-sm font-bold text-lime-900">+60 16-966 9824</p>
-                                                </div>
-                                            </motion.div>
+
+                                                <div className="px-2 space-y-4">
+                                                    {/* Section Telefon */}
+                                                    <div className="flex items-center space-x-3">
+                                                        <div className="w-8 h-8 bg-lime-100 rounded-full flex items-center justify-center text-lime-700">
+                                                            <i className="fas fa-phone-alt text-xs"></i>
+                                                        </div>
+                                                        <div className="space-y-0.5">
+                                                            <p className="text-[10px] font-black text-lime-800 uppercase tracking-widest leading-none">Contact En Jainal</p>
+                                                            <p className="text-sm font-bold text-lime-900 leading-none">+60 16-966 9824</p>
+                                                        </div>
+                                                    </div>
+
+                                                    {/* Section Emel */}
+                                                    <div className="flex items-center space-x-3">
+                                                        <div className="w-8 h-8 bg-lime-100 rounded-full flex items-center justify-center text-lime-700">
+                                                            <i className="fas fa-envelope text-xs"></i>
+                                                        </div>
+                                                        <div className="space-y-0.5">
+                                                            <p className="text-[10px] font-black text-lime-800 uppercase tracking-widest leading-none">Email Address</p>
+                                                            <p className="text-sm font-bold text-lime-900 leading-none">jainal1407@gmail.com</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="border-t border-lime-200/50 w-full pt-4">
+                                                        <div className="flex flex-wrap gap-3 items-center">
+                                                            
+                                                            {/* Instagram Badge */}
+                                                            <a 
+                                                                href="https://instagram.com/junioricecream_ipoh" 
+                                                                target="_blank" 
+                                                                rel="noopener noreferrer"
+                                                                className="flex items-center space-x-2 bg-white/80 hover:bg-white px-3 py-1.5 rounded-full shadow-sm border border-lime-100 transition-all duration-300 hover:scale-105 group"
+                                                            >
+                                                                <i 
+                                                                    className="fab fa-instagram text-xl" 
+                                                                    style={{
+                                                                        background: "linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)",
+                                                                        WebkitBackgroundClip: "text",
+                                                                        WebkitTextFillColor: "transparent",
+                                                                        display: "inline-block"
+                                                                    }}
+                                                                ></i>
+                                                                <span className="text-xs font-bold text-lime-900">@junioricecream_ipoh</span>
+                                                            </a>
+
+                                                            {/* TikTok Badge */}
+                                                            <a 
+                                                                href="https://tiktok.com/@junioricecreamipoh" 
+                                                                target="_blank" 
+                                                                rel="noopener noreferrer"
+                                                                className="flex items-center space-x-2 bg-white/80 hover:bg-white px-3 py-1.5 rounded-full shadow-sm border border-lime-100 transition-all duration-300 hover:scale-105"
+                                                            >
+                                                                <i className="fab fa-tiktok text-lg text-black"></i>
+                                                                <span className="text-xs font-bold text-lime-900">@junioricecreamipoh</span>
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+                                                </div>                                               
+                                       
+                                            </motion.div>                                                                                
                                         </div>
                                     </div>
                                 </motion.div>

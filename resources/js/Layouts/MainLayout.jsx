@@ -5,7 +5,7 @@ export default function MainLayout({ children }) {
         <div>
             <Navbar />
 
-            <main className="pt-20">
+            <main>
     {children}
 </main>
         </div>
