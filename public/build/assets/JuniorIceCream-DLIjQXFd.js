@@ -1,4 +1,4 @@
-import{h as e,l as t,n,t as r}from"./jsx-runtime-D9CfDZ_c.js";import{n as i,r as a,t as o}from"./AuthenticatedLayout-BTJ4zx3p.js";var s=e(t(),1),c=r();function l(){let[e,t]=(0,s.useState)(`about`);return(0,c.jsxs)(c.Fragment,{children:[(0,c.jsx)(`style`,{dangerouslySetInnerHTML:{__html:`
+import{h as e,l as t,n,t as r}from"./jsx-runtime-D9CfDZ_c.js";import{n as i,r as a,t as o}from"./AuthenticatedLayout-CQw4YvG9.js";var s=e(t(),1),c=r();function l(){let[e,t]=(0,s.useState)(`about`);return(0,c.jsxs)(c.Fragment,{children:[(0,c.jsx)(`style`,{dangerouslySetInnerHTML:{__html:`
                 nav { background-color: #32CD32 !important; } 
                 nav a, nav button { color: white !important; }
                 

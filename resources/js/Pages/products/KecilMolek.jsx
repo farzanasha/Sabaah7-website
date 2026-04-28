@@ -101,7 +101,7 @@ export default function KecikMolek() {
                                                     THE <span className="text-gray-300">CRAFT</span>
                                                 </h2>
                                                 <p className="text-white text-xl font-bold">
-                                                    Inspiration Name: <span className="bg-white text-[#4a0e1c] px-2 py-0.5 rounded-lg">Siti Aminah</span>.
+                                                    Inspiration By: <span className="bg-white text-[#4a0e1c] px-2 py-0.5 rounded-lg">Siti Aminah</span>.
                                                 </p>
                                                 <p className="text-white font-medium leading-relaxed text-justify bg-black/20 p-6 rounded-2xl border-l-4 border-white">
                                                     "Kecik Molek is a business providing tailoring and alteration services for both women's and men's clothing. The business came into existence after the founder gained years of experience working for others."
