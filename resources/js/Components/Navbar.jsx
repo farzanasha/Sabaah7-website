@@ -11,10 +11,6 @@ export default function Navbar() {
     };
 
     return (
-        /* 1. KEMASKINI WARNA: 
-           Guna 'bg-[#8B0000]' (Dark Red/Maroon) atau 'bg-red-900'.
-           Saya syorkan guna HEX code #8B0000 untuk dapatkan warna Maroon yang solid.
-        */
         <nav className="fixed top-0 left-0 w-full z-50 bg-[#8B0000] backdrop-blur-md shadow-md transition-all duration-300">
             <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
 
@@ -23,8 +19,7 @@ export default function Navbar() {
                     <img 
                         src="/images/logo.png" 
                         alt="Sabaah7 Logo"
-                        className="h-10" 
-                        /* 2. KEMASKINI LOGO: Buang 'brightness-0 invert' untuk kembali ke warna asal */
+                        className="h-10 transition-transform hover:scale-105" 
                     />
                 </div>
 
@@ -41,35 +36,40 @@ export default function Navbar() {
                     </button>
                 </div>
 
-{/* --- MENU PENUH & DROPDOWN --- */}
-<div className={`${isMenuOpen ? 'block' : 'hidden'} md:flex md:items-center absolute top-16 right-0 w-full md:w-auto bg-black/70 backdrop-blur-lg md:bg-transparent shadow-lg md:shadow-none p-6 md:p-0 md:static`}>
-    <div className="flex flex-col md:flex-row md:gap-6 w-full items-center">
-        
-        <Link href="/" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-300 transition font-medium">
-            Home
-        </Link>
+                {/* --- MENU PENUH & DROPDOWN --- */}
+                <div className={`${isMenuOpen ? 'block' : 'hidden'} md:flex md:items-center absolute top-16 right-0 w-full md:w-auto bg-[#8B0000] md:bg-transparent shadow-lg md:shadow-none p-6 md:p-0 md:static`}>
+                    <div className="flex flex-col md:flex-row md:gap-6 w-full items-center">
+                        
+                        <Link href="/" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-200 transition font-bold uppercase text-xs tracking-widest">
+                            Home
+                        </Link>
 
-        <Link href="/about" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-300 transition font-medium">
-            About
-        </Link>
+                        <Link href="/about" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-200 transition font-bold uppercase text-xs tracking-widest">
+                            About
+                        </Link>
 
-        <Link href="/businesses" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-300 transition font-medium">
-            Businesses
-        </Link>
+                        <Link href="/businesses" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-200 transition font-bold uppercase text-xs tracking-widest">
+                            Businesses
+                        </Link>
 
-        <Link href="/products" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-300 transition font-medium">
-            Products
-        </Link>
+                        <Link href="/products" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-200 transition font-bold uppercase text-xs tracking-widest">
+                            Products
+                        </Link>
 
-        <Link href="/gallery" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-300 transition font-medium">
-            Gallery
-        </Link>
+                        {/* --- LINK MEMBERSHIP BARU --- */}
+                        <Link href="/membership" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-200 transition font-bold uppercase text-xs tracking-widest">
+                            Membership
+                        </Link>
 
-        <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 text-white hover:text-red-300 transition font-medium">
-            Contact
-        </Link>
-    </div>
-</div>
+                        <Link href="/gallery" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-200 transition font-bold uppercase text-xs tracking-widest">
+                            Gallery
+                        </Link>
+
+                        <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 text-white hover:text-red-200 transition font-bold uppercase text-xs tracking-widest">
+                            Contact
+                        </Link>
+                    </div>
+                </div>
 
             </div>
         </nav>
