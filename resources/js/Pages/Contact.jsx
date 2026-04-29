@@ -60,8 +60,8 @@ export default function Contact() {
                                             <span>📞</span> Call or WhatsApp
                                         </p>
                                         <div className="space-y-2 text-lg font-bold">
-                                            <p className="hover:text-red-400 transition cursor-default">+60 11-1119 0377 <span className="text-white/50 text-sm font-medium">(Dzulqarnain Adzmi)</span></p>
-                                            <p className="hover:text-red-400 transition cursor-default">+60 11-6513 9295 <span className="text-white/50 text-sm font-medium">(Prabu Daymudoo)</span></p>
+                                            <a href="https://wa.me/601111190377?text=Hi Mr Dzulqarnain, I've got inquiry about Sabaah7" className="hover:text-red-400 transition cursor-default">+60 11-1119 0377 <span className="text-white/50 text-sm font-medium">(Dzulqarnain Adzmi)</span></a>
+                                            <a href="https://wa.me/601165139295?text=Hi Mr Prabu, I've got inquiry about Sabaah7" className="hover:text-red-400 transition cursor-default">+60 11-6513 9295 <span className="text-white/50 text-sm font-medium">(Prabu Daymudoo)</span></a>
                                         </div>
                                     </div>
 
@@ -75,7 +75,7 @@ export default function Contact() {
                                         </div>
                                     </div>
 
-                                    <div className="pt-8 border-t border-white/10 flex flex-col gap-4">
+                                    {/* <div className="pt-8 border-t border-white/10 flex flex-col gap-4">
                                         <p className="font-bold text-white/40 uppercase tracking-widest text-[10px]">Follow Our Journey</p>
                                         <div className="flex flex-wrap gap-x-6 gap-y-2 text-white/70 text-sm font-black uppercase tracking-tight">
                                             <a href="#" className="hover:text-red-500 transition-all">Facebook</a>
@@ -83,7 +83,7 @@ export default function Contact() {
                                             <a href="#" className="hover:text-red-500 transition-all">TikTok</a>
                                             <a href="#" className="hover:text-red-500 transition-all">LinkedIn</a>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </motion.div>

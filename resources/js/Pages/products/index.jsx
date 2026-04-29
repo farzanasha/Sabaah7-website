@@ -20,7 +20,7 @@ export default function Index() {
         {
             title: '🧵 Integrated Services',
             products: [
-                { name: 'Kecil Molek Tailor', logo: '/images/logos/kecil.png', href: '/products/kecil-molek' },
+                { name: 'Kecik Molek Tailor', logo: '/images/logos/kecil.png', href: '/products/kecil-molek' },
             ]
         }
     ];

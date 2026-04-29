@@ -12,14 +12,17 @@ export default function Membership() {
     const handleSubmit = async (e) => {
         e.preventDefault(); // Stop page dari refresh
         
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyZUFRFDEJTvWXdMe16IneoWk0UwK01krBcdQySNnLbAfl0g1dnaRQ6zLOyZivi7D4N/exec';
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz-s9Grvj7VaRK3_JCRItJ1r4hCIbuO2kavsQF1YKSDszgNjjuB2lUWBgsU0_8Hvuiu/exec'; // Pastikan ganti dengan URL Apps Script baru
 
         try {
             // Hantar ke Google Sheets
-            await fetch(GOOGLE_SCRIPT_URL, {
+            await fetch(SCRIPT_URL , {
                 method: 'POST',
                 mode: 'no-cors', 
-                body: JSON.stringify(formData)
+                body: JSON.stringify({
+                    ...formData,
+                    sheetName: 'Membership'
+                })
             });
 
             // 2. Buka WhatsApp

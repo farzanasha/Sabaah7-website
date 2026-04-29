@@ -37,7 +37,7 @@ export default function Navbar() {
                 </div>
 
                 {/* --- MENU PENUH & DROPDOWN --- */}
-                <div className={`${isMenuOpen ? 'block' : 'hidden'} md:flex md:items-center absolute top-16 right-0 w-full md:w-auto bg-[#8B0000] md:bg-transparent shadow-lg md:shadow-none p-6 md:p-0 md:static`}>
+                <div className={`${isMenuOpen ? 'block' : 'hidden'} md:flex md:items-center absolute top-16 right-0 w-full md:w-auto bg-gray-500/90 md:bg-transparent shadow-lg md:shadow-none p-6 md:p-0 md:static`}>
                     <div className="flex flex-col md:flex-row md:gap-6 w-full items-center">
                         
                         <Link href="/" onClick={() => setIsMenuOpen(false)} className="w-full text-center py-3 md:py-0 border-b border-white/10 md:border-b-0 text-white hover:text-red-200 transition font-bold uppercase text-xs tracking-widest">

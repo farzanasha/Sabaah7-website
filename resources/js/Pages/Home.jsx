@@ -71,7 +71,7 @@ export default function Home() {
                             {[
                                 { name: "Junior Ice Cream", logo: "junior.png", href: "/products/junior" },
                                 { name: "Warung Soja", logo: "soja.png", href: "/products/soja" },
-                                { name: "Kecil Molek", logo: "kecil.png", href: "/products/kecil-molek" },
+                                { name: "Kecik Molek", logo: "kecil.png", href: "/products/kecil-molek" },
                                 { name: "Mee Lantak", logo: "meelantak.png", href: "/products/meelantak" }
                             ].map((item, index) => (
                                 <motion.div

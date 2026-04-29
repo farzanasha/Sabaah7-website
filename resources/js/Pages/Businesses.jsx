@@ -15,7 +15,7 @@ export default function Businesses() {
         { id: 1, name: "Junior Ice Cream (Ipoh)", pos: { lat: 4.6644, lng: 101.0748 } },
         { id: 2, name: "Junior Ice Cream (Ampang)", pos: { lat: 3.1491, lng: 101.7618 } },
         { id: 3, name: "Warung Soja (Masjid Tanah)", pos: { lat: 2.3500, lng: 102.1000 } },
-        { id: 4, name: "Kecil Molek (Mantin)", pos: { lat: 2.8250, lng: 101.8930 } },
+        { id: 4, name: "Kecik Molek (Masjid Tanah)", pos: { lat: 2.4500, lng: 102.1000 } },
         { id: 5, name: "Mee Lantak (Durian Tunggal)", pos: { lat: 2.3120, lng: 102.2800 } },
     ];
 
@@ -30,7 +30,7 @@ export default function Businesses() {
 
     const businessList = [
         { title: "Agri-Business & Livestock", icon: "agri.png", active: false, subs: [] },
-        { title: "Integrated Services", icon: "services.png", active: true, subs: [{ name: "Kecil Molek Tailoring", link: "/products/tailoring" }] },
+        { title: "Integrated Services", icon: "services.png", active: true, subs: [{ name: "Kecik Molek Tailoring", link: "/products/tailoring" }] },
         { title: "Staple Food & Noodle Products", icon: "noodles.png", active: true, subs: [{ name: "Mee Lantak", link: "/products/meelantak" }] },
         { title: "Food & Beverage", icon: "food.png", active: true, subs: [
             { name: "Junior Ice Cream", link: "/products/junior" }, 
@@ -178,7 +178,7 @@ export default function Businesses() {
 
                                     <div className="group">
                                         <p className="text-red-500 font-black text-[12px] tracking-widest mb-1 uppercase">Services & Products</p>
-                                        <p className="text-white font-bold text-sm uppercase">Kecil Molek Tailor</p>
+                                        <p className="text-white font-bold text-sm uppercase">Kecik Molek Tailor</p>
                                         <p className="text-gray-300 text-xs mt-1">Masjid Tanah, Melaka</p>
                                         <p className="text-white font-bold text-sm uppercase mt-4">Mee Lantak</p>
                                         <p className="text-gray-300 text-xs mt-1">Masjid Tanah, Melaka</p>

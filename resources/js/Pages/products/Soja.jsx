@@ -1,11 +1,67 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head } from '@inertiajs/react';
-import { useState } from 'react';
+import { Head, usePage } from '@inertiajs/react'; // Ditambah usePage di sini
+import { useState, useEffect } from 'react'; // Digabungkan import useState & useEffect
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Soja() {
     // 1. STATE UNTUK CONTROL TAB
+    const { auth } = usePage().props; // Untuk check Admin (Delete button)
     const [activeTab, setActiveTab] = useState('about');
+
+    // --- STATE UNTUK REVIEW ---
+    const [reviews, setReviews] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [newReview, setNewReview] = useState({ name: '', email: '', rating: 5, comment: '' });
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz-s9Grvj7VaRK3_JCRItJ1r4hCIbuO2kavsQF1YKSDszgNjjuB2lUWBgsU0_8Hvuiu/exec'; // Pastikan ganti dengan URL Apps Script baru
+
+    // 1. Fungsi Tarik Data dari Sheets
+    const fetchReviews = async () => {
+        setLoading(true);
+        try {
+            const res = await fetch(SCRIPT_URL + '?page=WarungSojaReviews');
+            const data = await res.json();
+            setReviews(data);
+        } catch (err) { console.error("Error fetch:", err); }
+        setLoading(false);
+    };
+
+    useEffect(() => { fetchReviews(); }, []);
+
+    // 2. Fungsi Hantar Review
+    const handleSubmitReview = async (e) => {
+        e.preventDefault();
+        try {
+            await fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: JSON.stringify({
+                     ...newReview, 
+                     type: 'review',
+                     sheetName: 'WarungSojaReviews' 
+                    })
+            });
+            alert("Terima kasih! Review anda telah dihantar.");
+            setNewReview({ name: '', email: '', rating: 5, comment: '' });
+            setTimeout(() => fetchReviews(), 2000); // Tunggu kejap baru refresh
+        } catch (err) { console.error("Error post:", err); }
+    };
+
+    // 3. Fungsi Delete (Admin Only)
+    const handleDeleteReview = async (rowId) => {
+        if (!confirm("Padam review ini dari Google Sheets?")) return;
+        try {
+            await fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: JSON.stringify({ 
+                    action: "delete", 
+                    rowId: rowId,
+                    sheetName: 'WarungSojaReviews'
+                 })
+            });
+            fetchReviews();
+        } catch (err) { console.error("Error delete:", err); }
+    };
 
     return (
         <>
@@ -438,6 +494,126 @@ export default function Soja() {
 )}
                         </AnimatePresence>
                     </div>
+
+{/* Divider Minimalis - TEMA EARTH TONE (MOCHA/GOLD) */}
+<div className="max-w-6xl mx-auto px-6 mt-0">
+    <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#b5a642]/50 to-transparent"></div>
+</div>                  
+
+{/* ============================================================ */}
+{/* SECTION TESTIMONY & REVIEW - WARUNG SOJA EARTH THEME */}
+{/* ============================================================ */}
+<div className="max-w-6xl mx-auto px-6 pb-24 mt-10">
+    {/* KOTAK BESAR (Warna Coklat Mocha ikut gambar Strategic Objectives) */}
+    <div className="bg-[#3d332d] rounded-[4rem] border border-white/5 p-8 md:p-16 shadow-2xl">
+        
+        {/* TITLE AREA (Warna Emas ikut gambar) */}
+        <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-black text-[#d4b982] uppercase tracking-[0.2em]">
+                Reviews and Testimony
+            </h2>
+            <div className="w-16 h-1 bg-[#d4b982] mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        {/* GRID AREA */}
+        <div className="grid lg:grid-cols-3 gap-12">
+            
+            {/* FORM SIDE */}
+            <div className="lg:col-span-1">
+                <div className="bg-[#2a2420] p-8 rounded-[3rem] border border-white/5 shadow-2xl sticky top-24">
+                    <h3 className="text-lg font-black text-[#d4b982] mb-6 uppercase tracking-widest">Post Review</h3>
+                    <form onSubmit={handleSubmitReview} className="space-y-4">
+                        <input 
+                            type="text" 
+                            placeholder="Your Name" 
+                            required 
+                            className="w-full bg-[#1a1614] border-none rounded-2xl p-4 text-sm font-bold text-white placeholder:text-gray-600 focus:ring-1 focus:ring-[#d4b982]" 
+                            value={newReview.name} 
+                            onChange={e => setNewReview({...newReview, name: e.target.value})} 
+                        />
+                        
+                        <select 
+                            className="w-full bg-[#1a1614] border-none rounded-2xl p-4 text-sm font-bold text-white focus:ring-1 focus:ring-[#d4b982]"
+                            value={newReview.rating} 
+                            onChange={e => setNewReview({...newReview, rating: e.target.value})}
+                        >
+                            <option value="5">⭐⭐⭐⭐⭐ (Excellent)</option>
+                            <option value="4">⭐⭐⭐⭐ (Great)</option>
+                            <option value="3">⭐⭐⭐ (Good)</option>
+                            <option value="2">⭐⭐ (Average)</option>
+                            <option value="1">⭐ (Poor)</option>
+                        </select>
+
+                        <textarea 
+                            placeholder="Write your experience..." 
+                            required 
+                            rows="4" 
+                            className="w-full bg-[#1a1614] border-none rounded-2xl p-4 text-sm font-bold text-white placeholder:text-gray-600 focus:ring-1 focus:ring-[#d4b982] resize-none"
+                            value={newReview.comment} 
+                            onChange={e => setNewReview({...newReview, comment: e.target.value})}
+                        ></textarea>
+                        
+                        <button 
+                            type="submit" 
+                            className="w-full bg-[#d4b982] hover:bg-[#c4a972] text-[#1a1614] font-black py-4 rounded-2xl shadow-xl transition-all uppercase tracking-[0.2em] text-xs"
+                        >
+                            Submit Review
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            {/* DISPLAY SIDE */}
+            <div className="lg:col-span-2 space-y-6">
+                {loading ? (
+                    <div className="flex justify-center py-20">
+                        <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-[#d4b982]"></div>
+                    </div>
+                ) : reviews.length > 0 ? (
+                    reviews.map((rev) => (
+                        <motion.div 
+                            key={rev.id} 
+                            initial={{ opacity: 0 }} 
+                            animate={{ opacity: 1 }} 
+                            className="bg-[#2a2420]/50 backdrop-blur-sm p-8 rounded-[2.5rem] border border-white/5 relative group"
+                        >
+                            <div className="flex justify-between items-start">
+                                <div className="flex flex-col gap-1">
+                                    <div className="flex text-[#d4b982] text-xs">{"★".repeat(rev.rating)}</div>
+                                    <h4 className="font-black text-white uppercase text-sm tracking-widest">{rev.name}</h4>
+                                    <p className="text-[10px] text-gray-500 font-bold uppercase">
+                                        {new Date(rev.date).toLocaleDateString()}
+                                    </p>
+                                </div>
+                                {auth.user && (
+                                    <button 
+                                        onClick={() => handleDeleteReview(rev.id)} 
+                                        className="text-red-500/50 hover:text-red-500 p-2 transition-colors"
+                                    >
+                                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                                    </button>
+                                )}
+                            </div>
+                            <p className="mt-4 text-gray-300 font-medium leading-relaxed italic text-sm md:text-base">
+                                "{rev.comment}"
+                            </p>
+                        </motion.div>
+                    ))
+                ) : (
+                    <div className="flex items-center justify-center h-full min-h-[300px] bg-white/5 rounded-[3rem] border-2 border-dashed border-white/10">
+                        <p className="text-gray-500 font-black uppercase tracking-widest text-[10px] text-center px-10 leading-relaxed">
+                            No reviews yet. <br/>
+                            <span className="text-[#d4b982]">Be the first to share your experience!</span>
+                        </p>
+                    </div>
+                )}
+            </div>
+        </div>
+    </div>
+</div>
+
+                    {/* END SECTION */}
+
                 </div>
             </div>
         </>

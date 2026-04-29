@@ -1,10 +1,67 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head } from '@inertiajs/react';
-import { useState } from 'react';
+import { Head, usePage } from '@inertiajs/react'; 
+import { useState, useEffect } from 'react'; 
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function KecikMolek() {
+    const { auth } = usePage().props; // Untuk check Admin (Delete button)
+
     const [activeTab, setActiveTab] = useState('about');
+
+     // --- STATE UNTUK REVIEW ---
+    const [reviews, setReviews] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [newReview, setNewReview] = useState({ name: '', email: '', rating: 5, comment: '' });
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz-s9Grvj7VaRK3_JCRItJ1r4hCIbuO2kavsQF1YKSDszgNjjuB2lUWBgsU0_8Hvuiu/exec'; // Pastikan ganti dengan URL Apps Script baru
+
+    // 1. Fungsi Tarik Data dari Sheets
+    const fetchReviews = async () => {
+        setLoading(true);
+        try {
+            const res = await fetch(SCRIPT_URL + '?page=KecikMolekReviews');
+            const data = await res.json();
+            setReviews(data);
+        } catch (err) { console.error("Error fetch:", err); }
+        setLoading(false);
+    };
+
+    useEffect(() => { fetchReviews(); }, []);
+
+    // 2. Fungsi Hantar Review
+    const handleSubmitReview = async (e) => {
+        e.preventDefault();
+        try {
+            await fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: JSON.stringify({
+                     ...newReview, 
+                     type: 'review',
+                     sheetName: 'KecikMolekReviews' 
+                    })
+            });
+            alert("Terima kasih! Review anda telah dihantar.");
+            setNewReview({ name: '', email: '', rating: 5, comment: '' });
+            setTimeout(() => fetchReviews(), 2000); // Tunggu kejap baru refresh
+        } catch (err) { console.error("Error post:", err); }
+    };
+
+    // 3. Fungsi Delete (Admin Only)
+    const handleDeleteReview = async (rowId) => {
+        if (!confirm("Padam review ini dari Google Sheets?")) return;
+        try {
+            await fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: JSON.stringify({ 
+                    action: "delete", 
+                    rowId: rowId,
+                    sheetName: 'KecikMolekReviews'
+                 })
+            });
+            fetchReviews();
+        } catch (err) { console.error("Error delete:", err); }
+    };
 
     return (
         <>
@@ -291,6 +348,125 @@ export default function KecikMolek() {
                             )}
                         </AnimatePresence>
                     </div>
+
+{/* Divider Minimalis - TEMA KECIL MOLEK (KUNING/EMAS/HITAM) */}
+<div className="max-w-6xl mx-auto px-6 mt-0">
+    <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-amber-400 to-transparent shadow-[0_0_15px_rgba(251,191,36,0.5)]"></div>
+</div>                  
+
+{/* ============================================================ */}
+{/* SECTION TESTIMONY & REVIEW - KECIL MOLEK AUTHENTIC VERSION */}
+{/* ============================================================ */}
+<div className="max-w-6xl mx-auto px-6 pb-24 mt-10">
+    {/* KOTAK BESAR (Tukar kepada Dark/Amber theme) */}
+    <div className="bg-amber-50/10 backdrop-blur-3xl rounded-[4rem] border border-amber-500/20 p-8 md:p-16 shadow-2xl">
+        
+        {/* TITLE AREA */}
+        <div className="text-center mb-16">
+            <h2 className="text-4xl font-black text-amber-500 uppercase tracking-tighter">Reviews and Testimony</h2>
+            <div className="w-20 h-1.5 bg-amber-500 mx-auto mt-4 rounded-full shadow-lg"></div>
+        </div>
+
+        {/* GRID AREA */}
+        <div className="grid lg:grid-cols-3 gap-12">
+            
+            {/* FORM SIDE */}
+            <div className="lg:col-span-1">
+                <div className="bg-white/90 backdrop-blur-xl p-8 rounded-[3rem] border border-amber-200 shadow-xl sticky top-24">
+                    <h3 className="text-xl font-black text-amber-900 mb-6 uppercase tracking-tight">Leave a Review</h3>
+                    <form onSubmit={handleSubmitReview} className="space-y-4">
+                        <input 
+                            type="text" 
+                            placeholder="Your Name" 
+                            required 
+                            className="w-full bg-amber-50 border-amber-100 rounded-2xl p-4 text-sm font-bold shadow-inner focus:ring-amber-500 text-black placeholder:text-gray-400" 
+                            value={newReview.name} 
+                            onChange={e => setNewReview({...newReview, name: e.target.value})} 
+                        />
+                        
+                        <select 
+                            className="w-full bg-amber-50 border-amber-100 rounded-2xl p-4 text-sm font-bold shadow-inner text-black"
+                            value={newReview.rating} 
+                            onChange={e => setNewReview({...newReview, rating: e.target.value})}
+                        >
+                            <option value="5">⭐⭐⭐⭐⭐ (Excellent)</option>
+                            <option value="4">⭐⭐⭐⭐ (Great)</option>
+                            <option value="3">⭐⭐⭐ (Average)</option>
+                            <option value="2">⭐⭐ (Poor)</option>
+                            <option value="1">⭐ (Terrible)</option>
+                        </select>
+
+                        <textarea 
+                            placeholder="Share your experience..." 
+                            required 
+                            rows="4" 
+                            className="w-full bg-amber-50 border-amber-100 rounded-2xl p-4 text-sm font-bold shadow-inner resize-none text-black placeholder:text-gray-400"
+                            value={newReview.comment} 
+                            onChange={e => setNewReview({...newReview, comment: e.target.value})}
+                        ></textarea>
+                        
+                        <button 
+                            type="submit" 
+                            className="w-full bg-black hover:bg-amber-600 text-white font-black py-4 rounded-2xl shadow-xl transition-all uppercase tracking-widest text-xs"
+                        >
+                            Submit Review ✨
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            {/* DISPLAY SIDE */}
+            <div className="lg:col-span-2 space-y-6">
+                {loading ? (
+                    <div className="flex justify-center py-20">
+                        <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-amber-500"></div>
+                    </div>
+                ) : reviews.length > 0 ? (
+                    reviews.map((rev) => (
+                        <motion.div 
+                            key={rev.id} 
+                            initial={{ opacity: 0 }} 
+                            animate={{ opacity: 1 }} 
+                            className="bg-white/10 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/20 shadow-lg relative group overflow-hidden"
+                        >
+                            <div className="flex justify-between items-start relative z-10">
+                                <div>
+                                    <div className="flex text-amber-400 mb-2">{"★".repeat(rev.rating)}</div>
+                                    <h4 className="font-black text-amber-700 uppercase text-sm tracking-tight">{rev.name}</h4>
+                                    <p className="text-[10px] text-amber-100/50 font-black uppercase mt-1">
+                                        {new Date(rev.date).toLocaleDateString()}
+                                    </p>
+                                </div>
+                                {auth.user && (
+                                    <button 
+                                        onClick={() => handleDeleteReview(rev.id)} 
+                                        className="bg-red-500/80 hover:bg-red-600 text-white px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all"
+                                    >
+                                        Delete
+                                    </button>
+                                )}
+                            </div>
+                            <p className="mt-4 text-white font-medium leading-relaxed italic text-sm md:text-base relative z-10">
+                                "{rev.comment}"
+                            </p>
+                            <div className="absolute -right-4 -bottom-4 text-amber-500/10 text-8xl font-black italic select-none">"</div>
+                        </motion.div>
+                    ))
+                ) : (
+                    <div className="flex items-center justify-center h-full min-h-[300px] bg-black/20 rounded-[3rem] border-2 border-dashed border-amber-500/30">
+                        <p className="text-amber-500 font-black uppercase tracking-widest text-xs text-center px-10">
+                            Belum ada review. <br/>
+                            <span className="opacity-60 text-amber-200">Jadilah yang pertama memberi maklum balas!</span>
+                        </p>
+                    </div>
+                )}
+            </div>
+        </div>
+    </div>
+</div>
+
+                    {/* END SECTION */}
+
                 </div>
             </div>
         </>
