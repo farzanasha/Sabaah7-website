@@ -93,7 +93,7 @@ export default function Membership() {
                                 Privacy Assurance
                             </h4>
                             <p className="text-gray-400 text-xs leading-relaxed font-medium">
-                                We value your security. This form only collects basic contact information. We **DO NOT** require your IC Number at this stage.
+                                We value your security. This form only collects basic contact information. We **DO NOT** share your information with 3rd party.
                             </p>
                         </div>
                     </motion.div>
