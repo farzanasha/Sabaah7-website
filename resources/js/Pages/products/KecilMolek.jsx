@@ -12,7 +12,7 @@ export default function KecikMolek() {
     const [reviews, setReviews] = useState([]);
     const [loading, setLoading] = useState(true);
     const [newReview, setNewReview] = useState({ name: '', email: '', rating: 5, comment: '' });
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz-s9Grvj7VaRK3_JCRItJ1r4hCIbuO2kavsQF1YKSDszgNjjuB2lUWBgsU0_8Hvuiu/exec'; // Pastikan ganti dengan URL Apps Script baru
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwz1K0opvn8n_Xpg4ejzLEb3MKGoGMpCg2KNBeC6EuS-58qEdG9ojoCKvRV1VbrOXnMxA/exec'; // Pastikan ganti dengan URL Apps Script baru
 
     // 1. Fungsi Tarik Data dari Sheets
     const fetchReviews = async () => {
@@ -455,8 +455,8 @@ export default function KecikMolek() {
                 ) : (
                     <div className="flex items-center justify-center h-full min-h-[300px] bg-black/20 rounded-[3rem] border-2 border-dashed border-amber-500/30">
                         <p className="text-amber-500 font-black uppercase tracking-widest text-xs text-center px-10">
-                            Belum ada review. <br/>
-                            <span className="opacity-60 text-amber-200">Jadilah yang pertama memberi maklum balas!</span>
+                            No Reviews Yet. <br/>
+                            <span className="opacity-60 text-amber-200">Be the first one to share your Feedback!</span>
                         </p>
                     </div>
                 )}

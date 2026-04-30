@@ -12,7 +12,7 @@ export default function Soja() {
     const [reviews, setReviews] = useState([]);
     const [loading, setLoading] = useState(true);
     const [newReview, setNewReview] = useState({ name: '', email: '', rating: 5, comment: '' });
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz-s9Grvj7VaRK3_JCRItJ1r4hCIbuO2kavsQF1YKSDszgNjjuB2lUWBgsU0_8Hvuiu/exec'; // Pastikan ganti dengan URL Apps Script baru
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwz1K0opvn8n_Xpg4ejzLEb3MKGoGMpCg2KNBeC6EuS-58qEdG9ojoCKvRV1VbrOXnMxA/exec'; // Pastikan ganti dengan URL Apps Script baru
 
     // 1. Fungsi Tarik Data dari Sheets
     const fetchReviews = async () => {

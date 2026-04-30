@@ -11,7 +11,7 @@ export default function MeeLantak() {
     const [reviews, setReviews] = useState([]);
     const [loading, setLoading] = useState(true);
     const [newReview, setNewReview] = useState({ name: '', email: '', rating: 5, comment: '' });
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz-s9Grvj7VaRK3_JCRItJ1r4hCIbuO2kavsQF1YKSDszgNjjuB2lUWBgsU0_8Hvuiu/exec'; // Pastikan ganti dengan URL Apps Script baru
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw-s21wBKTvNnvLBlaouiZIxdNUXgtpHxzlrkxGNp4OPRKCFKUvF52zQmqbZHgRf8lB/exec'; // Pastikan ganti dengan URL Apps Script baru
 
     // 1. Fungsi Tarik Data dari Sheets
     const fetchReviews = async () => {
@@ -365,8 +365,8 @@ export default function MeeLantak() {
                 ) : (
                     <div className="flex items-center justify-center h-full min-h-[300px] bg-black/40 rounded-[3rem] border-2 border-dashed border-red-900/50">
                         <p className="text-red-500 font-black uppercase tracking-widest text-xs text-center px-10">
-                            Belum ada maklum balas. <br/>
-                            <span className="opacity-60 text-gray-400 font-bold">Jadilah yang pertama melantak dan memberi review!</span>
+                             No Reviews Yet <br/>
+                            <span className="opacity-60 text-gray-400 font-bold">Be the first one to share your experience!</span>
                         </p>
                     </div>
                 )}

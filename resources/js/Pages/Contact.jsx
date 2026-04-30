@@ -60,7 +60,7 @@ export default function Contact() {
                                             <span>📞</span> Call or WhatsApp
                                         </p>
                                         <div className="space-y-2 text-lg font-bold">
-                                            <a href="https://wa.me/601111190377?text=Hi Mr Dzulqarnain, I've got inquiry about Sabaah7" className="hover:text-red-400 transition cursor-default">+60 11-1119 0377 <span className="text-white/50 text-sm font-medium">(Dzulqarnain Adzmi)</span></a>
+                                            <a href="https://wa.me/601111190377?text=Hi Mr Dzulqarnain, I've got inquiry about Sabaah7" className="hover:text-red-400 transition cursor-default">+60 11-1119 0377 <span className="text-white/50 text-sm font-medium">(Dzulqarnain Adzmi)<br></br></span></a>
                                             <a href="https://wa.me/601165139295?text=Hi Mr Prabu, I've got inquiry about Sabaah7" className="hover:text-red-400 transition cursor-default">+60 11-6513 9295 <span className="text-white/50 text-sm font-medium">(Prabu Daymudoo)</span></a>
                                         </div>
                                     </div>

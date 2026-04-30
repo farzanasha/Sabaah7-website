@@ -170,7 +170,7 @@ export default function Businesses() {
                                     <div className="group">
                                         <p className="text-red-500 font-black text-[12px] tracking-widest mb-1 uppercase">Food & Beverage</p>
                                         <p className="text-white font-bold text-sm uppercase">Junior Ice Cream</p>
-                                        <p className="text-gray-300 text-xs mt-1">Ampang, Selangor & Meru, Perak</p>
+                                        <p className="text-gray-300 text-xs mt-1">Ampang, Selangor & Ipoh, Perak</p>
                                         <p className="text-white font-bold text-sm uppercase mt-4">Warung Sajo</p>
                                         <p className="text-gray-300 text-xs mt-1">Masjid Tanah, Melaka</p>
                                         <hr className="border-t border-white/10 my-4" />
