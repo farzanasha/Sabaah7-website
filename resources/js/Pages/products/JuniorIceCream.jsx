@@ -331,7 +331,7 @@ export default function JuniorIceCream() {
                                                 <div className="flex justify-between items-start px-2">
                                                     <div>
                                                         <div className="bg-lime-600 text-white px-5 py-1.5 rounded-full inline-block font-black text-[10px] tracking-widest shadow-md">AMPANG BRANCH</div>
-                                                        <h3 className="text-xl font-black text-lime-900 mt-3 uppercase">Ampang, Selangor</h3>
+                                                        <h3 className="text-xl font-black text-lime-900 mt-3 uppercase">Ipoh, Selangor</h3>
                                                     </div>
                                                     <span className="text-3xl">📍</span>
                                                 </div>

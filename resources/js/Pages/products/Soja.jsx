@@ -156,7 +156,7 @@ export default function Soja() {
                         </div>
                     </div>
 
-                    <div className="max-w-6xl mx-auto px-6 pb-24">
+                    <div className="max-w-6xl mx-auto px-6 pb-5">
                         <AnimatePresence mode="wait">
                             
                             {activeTab === 'about' && (
@@ -471,7 +471,7 @@ export default function Soja() {
         </div>
 
         {/* FINAL CALL TO ACTION */}
-        <div className="max-w-4xl mx-auto px-4 text-center space-y-8 pt-10 pb-20">
+        <div className="max-w-4xl mx-auto px-4 text-center space-y-8 pt-10 pb-0">
             <div className="h-[1px] w-full bg-white/10"></div>
             <p className="text-[#e5ba73] font-black text-xl md:text-2xl uppercase italic tracking-widest">
                 "Report to duty for your breakfast, soldier!"
