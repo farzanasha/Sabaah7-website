@@ -214,6 +214,22 @@ export default function MeeLantak() {
                                                         <p className="text-[10px] font-black text-[#facc15] uppercase tracking-widest">Contact</p>
                                                         <p className="font-bold text-sm">Pn Zubaidah: +60 17-833 2301</p>
                                                     </div>
+                                                    <div>
+                                                        <a 
+                                                                href="https://www.facebook.com/profile.php?id=61560205845343" 
+                                                                target="_blank" 
+                                                                rel="noopener noreferrer"
+                                                                className="flex items-center space-x-2 bg-white/80 hover:bg-white px-3 py-1.5 rounded-full shadow-sm border border-lime-100 transition-all duration-300 hover:scale-105 group"
+                                                            >
+                                                                <i className="fab fa-facebook text-xl" 
+                                                                    style={{
+                                                                        color: "#1877F2", // Biru rasmi Facebook
+                                                                        display: "inline-block"
+                                                                    }}
+                                                                    ></i>
+                                                                <span className="text-xs font-bold text-lime-900">Mee Lantak</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

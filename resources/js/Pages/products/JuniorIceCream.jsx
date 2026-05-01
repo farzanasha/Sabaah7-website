@@ -368,7 +368,20 @@ export default function JuniorIceCream() {
 
                                                     <div className="border-t border-lime-200/50 w-full pt-4">
                                                         <div className="flex flex-wrap gap-3 items-center">
-                                                            
+                                                            <a 
+                                                                href="https://www.facebook.com/profile.php?id=61588815791465" 
+                                                                target="_blank" 
+                                                                rel="noopener noreferrer"
+                                                                className="flex items-center space-x-2 bg-white/80 hover:bg-white px-3 py-1.5 rounded-full shadow-sm border border-lime-100 transition-all duration-300 hover:scale-105 group"
+                                                            >
+                                                                <i className="fab fa-facebook text-xl" 
+                                                                    style={{
+                                                                        color: "#1877F2", // Biru rasmi Facebook
+                                                                        display: "inline-block"
+                                                                    }}
+                                                                    ></i>
+                                                                <span className="text-xs font-bold text-lime-900">Junior Ice Cream Ampang</span>
+                                                            </a>
                                                             {/* Instagram Badge */}
                                                             <a 
                                                                 href="https://instagram.com/junioricecream_ipoh" 

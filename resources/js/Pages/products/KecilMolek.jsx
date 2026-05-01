@@ -280,31 +280,47 @@ export default function KecikMolek() {
 
                                                 {/* SOCIAL MEDIA BUTTONS - ADDED BACK HERE */}
                                                 <div className="flex flex-wrap gap-3 pt-4">
-                                                    {/* <a 
-                                                        href="https://www.facebook.com/people/Warong-Soja/" 
-                                                        target="_blank" 
-                                                        className="flex items-center gap-2 bg-white/5 hover:bg-white text-white hover:text-[#4a0e1c] px-4 py-2 rounded-full border border-white/20 text-[10px] md:text-xs font-black transition-all group"
-                                                    >
-                                                        <i className="fab fa-facebook-f"></i>
-                                                        <span>Facebook</span>
-                                                    </a> */}
+                                                            <a 
+                                                                href="https://www.facebook.com/profile.php?id=61589143647179" 
+                                                                target="_blank" 
+                                                                rel="noopener noreferrer"
+                                                                className="flex items-center space-x-2 bg-white/80 hover:bg-white px-3 py-1.5 rounded-full shadow-sm border border-lime-100 transition-all duration-300 hover:scale-105 group"
+                                                            >
+                                                                <i className="fab fa-facebook text-xl" 
+                                                                    style={{
+                                                                        color: "#1877F2", // Biru rasmi Facebook
+                                                                        display: "inline-block"
+                                                                    }}
+                                                                    ></i>
+                                                                <span className="text-xs font-bold text-black">Kecik Molek</span>
+                                                            </a>
 
                                                     <a 
                                                         href="https://instagram.com/kecik.molek_situkangjahit" 
-                                                        target="_blank" 
-                                                        className="flex items-center gap-2 bg-white/5 hover:bg-white text-white hover:text-[#4a0e1c] px-4 py-2 rounded-full border border-white/20 text-[10px] md:text-xs font-black transition-all group"
-                                                    >
-                                                        <i className="fab fa-instagram"></i>
-                                                        <span>@kecikmolek</span>
+                                                                target="_blank" 
+                                                                rel="noopener noreferrer"
+                                                                className="flex items-center space-x-2 bg-white/80 hover:bg-white px-3 py-1.5 rounded-full shadow-sm border border-lime-100 transition-all duration-300 hover:scale-105 group"
+                                                            >
+                                                                <i 
+                                                                    className="fab fa-instagram text-xl" 
+                                                                    style={{
+                                                                        background: "linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)",
+                                                                        WebkitBackgroundClip: "text",
+                                                                        WebkitTextFillColor: "transparent",
+                                                                        display: "inline-block"
+                                                                    }}
+                                                                ></i>
+                                                                <span className="text-xs font-bold text-black">@kecikmolek</span>
                                                     </a>
 
                                                     <a 
                                                         href="https://tiktok.com/@kecikmolek_situkangjahit" 
-                                                        target="_blank" 
-                                                        className="flex items-center gap-2 bg-white/5 hover:bg-white text-white hover:text-[#4a0e1c] px-4 py-2 rounded-full border border-white/20 text-[10px] md:text-xs font-black transition-all group"
-                                                    >
-                                                        <i className="fab fa-tiktok"></i>
-                                                        <span>@kecikmolek</span>
+                                                                target="_blank" 
+                                                                rel="noopener noreferrer"
+                                                                className="flex items-center space-x-2 bg-white/80 hover:bg-white px-3 py-1.5 rounded-full shadow-sm border border-lime-100 transition-all duration-300 hover:scale-105"
+                                                            >
+                                                                <i className="fab fa-tiktok text-lg text-black"></i>
+                                                                <span className="text-xs font-bold text-black">@kecikmolek</span>
                                                     </a>
                                                 </div>
                                             </div>

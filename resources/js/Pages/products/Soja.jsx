@@ -301,7 +301,7 @@ export default function Soja() {
                 {/* SOSIAL MEDIA BUTTONS */}
                 <div className="flex flex-wrap gap-3 pt-4">
                     <a 
-                        href="https://www.facebook.com/people/Warong-Soja/" 
+                        href="https://www.facebook.com/profile.php?id=61589103419025" 
                         target="_blank" 
                         className="flex items-center gap-2 bg-white/5 hover:bg-[#e5ba73] text-[#e5ba73] hover:text-[#1a110a] px-4 py-2 rounded-full border border-[#e5ba73]/30 text-[10px] md:text-xs font-black transition-all group"
                     >
