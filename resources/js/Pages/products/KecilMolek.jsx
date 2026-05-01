@@ -126,7 +126,7 @@ export default function KecikMolek() {
 <div className="sticky top-0 z-[40] flex justify-center w-full transition-all duration-500">
     
     {/* OVERLAY GRADIENT - Hanya muncul bila isSticky true */}
-{/* OVERLAY GRADIENT PEKAT */}
+
 <div className={`absolute inset-0 h-44 transition-opacity duration-500 pointer-events-none ${
     isSticky ? 'opacity-100' : 'opacity-0'
 }`}>
@@ -140,6 +140,7 @@ export default function KecikMolek() {
     <div className={`relative flex justify-center px-4 w-full transition-all duration-500 ${
         isSticky ? 'pt-20 pb-4' : 'mt-6 mb-10'
     }`}>
+        
         <div className="bg-[#4a0e1c]/90 backdrop-blur-xl p-2 rounded-[2.5rem] border border-white/20 shadow-2xl flex gap-2">
             <button
          onClick={() => {
@@ -415,12 +416,12 @@ export default function KecikMolek() {
 {/* ============================================================ */}
 <div className="max-w-6xl mx-auto px-6 pb-24 mt-10">
     {/* KOTAK BESAR (Tukar kepada Dark/Amber theme) */}
-    <div className="bg-amber-50/10 backdrop-blur-3xl rounded-[4rem] border border-amber-500/20 p-8 md:p-16 shadow-2xl">
+    <div className="bg-[#4a0e1c]/10 backdrop-blur-3xl rounded-[4rem] border border-amber-500/20 p-8 md:p-16 shadow-2xl">
         
         {/* TITLE AREA */}
         <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-amber-500 uppercase tracking-tighter">Reviews and Testimony</h2>
-            <div className="w-20 h-1.5 bg-amber-500 mx-auto mt-4 rounded-full shadow-lg"></div>
+            <h2 className="text-4xl font-black text-white uppercase tracking-tighter">Reviews and Testimony</h2>
+            <div className="w-20 h-1.5 bg-white mx-auto mt-4 rounded-full shadow-lg"></div>
         </div>
 
         {/* GRID AREA */}
