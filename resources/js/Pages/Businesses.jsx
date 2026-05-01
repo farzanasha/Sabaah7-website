@@ -30,8 +30,8 @@ export default function Businesses() {
 
     const businessList = [
         { title: "Agri-Business & Livestock", icon: "agri.png", active: false, subs: [] },
-        { title: "Integrated Services", icon: "services.png", active: true, subs: [{ name: "Kecik Molek Tailoring", link: "/products/tailoring" }] },
-        { title: "Staple Food & Noodle Products", icon: "noodles.png", active: true, subs: [{ name: "Mee Lantak", link: "/products/meelantak" }] },
+        { title: "Integrated Services", icon: "services.png", active: true, subs: [{ name: "kecik MOLEK Tailoring", link: "/products/kecil-molek" }] },
+        { title: "Staple Food", icon: "noodles.png", active: true, subs: [{ name: "Mee Lantak", link: "/products/meelantak" }] },
         { title: "Food & Beverage", icon: "food.png", active: true, subs: [
             { name: "Junior Ice Cream", link: "/products/junior" }, 
             { name: "Warung Soja", link: "/products/soja" }
@@ -170,7 +170,7 @@ export default function Businesses() {
                                     <div className="group">
                                         <p className="text-red-500 font-black text-[12px] tracking-widest mb-1 uppercase">Food & Beverage</p>
                                         <p className="text-white font-bold text-sm uppercase">Junior Ice Cream</p>
-                                        <p className="text-gray-300 text-xs mt-1">Ampang, Selangor & Ipoh, Perak</p>
+                                        <p className="text-gray-300 text-xs mt-1"> Ipoh, Perak (HQ) & Ampang, Selangor</p>
                                         <p className="text-white font-bold text-sm uppercase mt-4">Warung Sajo</p>
                                         <p className="text-gray-300 text-xs mt-1">Masjid Tanah, Melaka</p>
                                         <hr className="border-t border-white/10 my-4" />

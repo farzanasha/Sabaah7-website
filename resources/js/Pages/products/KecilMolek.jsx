@@ -63,6 +63,18 @@ export default function KecikMolek() {
         } catch (err) { console.error("Error delete:", err); }
     };
 
+    //4. sticky tab overlay
+    const [isSticky, setIsSticky] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            // Jika scroll lebih daripada 150px (adjust ikut tinggi hero anda), aktifkan overlay
+            setIsSticky(window.scrollY > 300); 
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
         <>
             <style dangerouslySetInnerHTML={{ __html: `
@@ -78,7 +90,7 @@ export default function KecikMolek() {
 
             <Head title="Kecik Molek Tailor - Fine Craftsmanship" />
             
-            <div className="relative min-h-screen w-full bg-[#1a0505] overflow-x-hidden font-sans">
+            <div className="relative min-h-screen w-full bg-[#1a0505] font-sans">
                 
                 {/* 1. BACKGROUND IMAGE */}
                 <div 
@@ -102,42 +114,66 @@ export default function KecikMolek() {
                             className="w-48 md:w-64 object-contain mb-6 drop-shadow-2xl" 
                             alt="Kecik Molek Logo" 
                         />
-                        <h1 className="text-4xl md:text-7xl font-black title-3d-kecik uppercase tracking-tighter leading-none">
-                            KECIK MOLEK
+                        <h1 className="text-4xl md:text-7xl font-black title-3d-kecik leading-none">
+                           kecik MOLEK
                         </h1>
                         <p className="mt-4 text-[#4a0e1c] bg-white/60 backdrop-blur-md px-4 py-1.5 rounded-full font-black tracking-widest text-[11px] md:text-sm uppercase italic shadow-sm inline-block mx-auto">
                             Seutas Harapan, Sepasang Impian
                         </p>
                     </div>
 
-                    {/* TAB NAVIGATION */}
-                    <div className="flex justify-center mt-6 mb-10 relative z-10 px-4">
-                        <div className="bg-[#4a0e1c]/90 backdrop-blur-xl p-2 rounded-[2.5rem] border border-white/20 shadow-2xl flex gap-2">
-                            <button
-                                onClick={() => setActiveTab('about')}
-                                className={`flex items-center gap-3 px-8 py-3 rounded-full font-black text-xs md:text-sm transition-all duration-300 border ${
-                                    activeTab === 'about'
-                                        ? 'bg-white text-[#4a0e1c] border-white scale-105 shadow-xl'
-                                        : 'bg-white/5 text-white border-white/10 hover:bg-white/10'
-                                }`}
-                            >
-                                <span>🏠</span>
-                                <span>ABOUT US</span>
-                            </button>
+{/* TAB NAVIGATION */}
+<div className="sticky top-0 z-[40] flex justify-center w-full transition-all duration-500">
+    
+    {/* OVERLAY GRADIENT - Hanya muncul bila isSticky true */}
+{/* OVERLAY GRADIENT PEKAT */}
+<div className={`absolute inset-0 h-44 transition-opacity duration-500 pointer-events-none ${
+    isSticky ? 'opacity-100' : 'opacity-0'
+}`}>
+    {/* Layer 1: Solid Background (Bahagian paling atas yang betul-betul pekat) */}
+    <div className="absolute inset-0 h-32 bg-[#1a0505]"></div>
+    
+    {/* Layer 2: Gradient Smooth (Untuk pudar ke bawah) */}
+    <div className="absolute top-32 inset-0 h-20 bg-gradient-to-b from-[#1a0505] to-transparent"></div>
+</div>
 
-                            <button
-                                onClick={() => setActiveTab('services')}
-                                className={`flex items-center gap-3 px-8 py-3 rounded-full font-black text-xs md:text-sm transition-all duration-300 border ${
-                                    activeTab === 'services'
-                                        ? 'bg-white text-[#4a0e1c] border-white scale-105 shadow-xl'
-                                        : 'bg-white/5 text-white border-white/10 hover:bg-white/10'
-                                }`}
-                            >
-                                <span>🪡</span>
-                                <span>SERVICES</span>
-                            </button>
-                        </div>
-                    </div>
+    <div className={`relative flex justify-center px-4 w-full transition-all duration-500 ${
+        isSticky ? 'pt-20 pb-4' : 'mt-6 mb-10'
+    }`}>
+        <div className="bg-[#4a0e1c]/90 backdrop-blur-xl p-2 rounded-[2.5rem] border border-white/20 shadow-2xl flex gap-2">
+            <button
+         onClick={() => {
+            setActiveTab('about');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+    }}
+    className={`flex items-center gap-3 px-8 py-3 rounded-full font-black text-xs md:text-sm transition-all duration-300 border ${
+        activeTab === 'about'
+            ? 'bg-white text-[#4a0e1c] border-white scale-105 shadow-xl'
+            : 'bg-white/5 text-white border-white/10 hover:bg-white/10'
+    }`}
+>
+                <span>🏠</span>
+                <span>ABOUT US</span>
+            </button>
+
+            <button
+                onClick={() => {
+                    setActiveTab('services');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                
+                }}
+                className={`flex items-center gap-3 px-8 py-3 rounded-full font-black text-xs md:text-sm transition-all duration-300 border ${
+                    activeTab === 'services'
+                        ? 'bg-white text-[#4a0e1c] border-white scale-105 shadow-xl'
+                        : 'bg-white/5 text-white border-white/10 hover:bg-white/10'
+                }`}
+            >
+                <span>🪡</span>
+                <span>SERVICES</span>
+            </button>
+        </div>
+    </div>
+</div>
 
                     <div className="max-w-6xl mx-auto px-6 pb-24">
                         <AnimatePresence mode="wait">
@@ -161,10 +197,10 @@ export default function KecikMolek() {
                                                     Inspiration By: <span className="bg-white text-[#4a0e1c] px-2 py-0.5 rounded-lg">Siti Aminah</span>.
                                                 </p>
                                                 <p className="text-white font-medium leading-relaxed text-justify bg-black/20 p-6 rounded-2xl border-l-4 border-white">
-                                                    "Kecik Molek is a business providing tailoring and alteration services for both women's and men's clothing. The business came into existence after the founder gained years of experience working for others."
+                                                    "kecik MOLEK is a business providing tailoring and alteration services for both women's and men's clothing. The business came into existence after the founder gained years of experience working for others."
                                                 </p>
                                                 <p className="text-white/70 text-sm leading-relaxed text-justify">
-                                                    Today, Kecik Molek operates independently, possessing its own sewing machines and managing its own orders. The operation originally started in Negeri Sembilan and has now relocated to Melaka.
+                                                    Today, kecik MOLEK operates independently, possessing its own sewing machines and managing its own orders. The operation originally started in Negeri Sembilan and has now relocated to Melaka.
                                                 </p>
                                             </div>
 
@@ -279,6 +315,9 @@ export default function KecikMolek() {
                                                 </div>
 
                                                 {/* SOCIAL MEDIA BUTTONS - ADDED BACK HERE */}
+                                                <div className="space-y-2">
+                                                <p className="text-[10px] mb-2 font-black text-gray-300 uppercase tracking-widest">Click below to visit our socials</p>
+                 
                                                 <div className="flex flex-wrap gap-3 pt-4">
                                                             <a 
                                                                 href="https://www.facebook.com/profile.php?id=61589143647179" 
@@ -322,6 +361,7 @@ export default function KecikMolek() {
                                                                 <i className="fab fa-tiktok text-lg text-black"></i>
                                                                 <span className="text-xs font-bold text-black">@kecikmolek</span>
                                                     </a>
+                                                </div>
                                                 </div>
                                             </div>
                                         </div>

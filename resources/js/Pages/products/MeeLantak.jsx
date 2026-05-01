@@ -62,22 +62,33 @@ export default function MeeLantak() {
         } catch (err) { console.error("Error delete:", err); }
     };
 
+    //4. sticky tab overlay
+            const [isSticky, setIsSticky] = useState(false);
+
+            useEffect(() => {
+                const handleScroll = () => {
+                    // Jika scroll lebih daripada 150px (adjust ikut tinggi hero anda), aktifkan overlay
+                    setIsSticky(window.scrollY > 300); 
+                };
+                window.addEventListener('scroll', handleScroll);
+                return () => window.removeEventListener('scroll', handleScroll);
+            }, []);
+
     return (
         <>
             <style dangerouslySetInnerHTML={{ __html: `
                 nav { background-color: #450a0a !important; } 
                 nav a, nav button { color: #facc15 !important; }
                 
-                .title-3d-mee { 
+                 .title-3d { 
                     color: white; 
-                    -webkit-text-stroke: 1px #facc15; 
-                    text-shadow: 4px 4px 0px #450a0a;
+                    -webkit-text-stroke: 1px #524824; 
+                    text-shadow: 3px 3px 3px #2d050d;
                 }
             `}} />
 
             <Head title="Mee Lantak - Official" />
-            
-            <div className="relative min-h-screen w-full bg-[#1a0505] overflow-x-hidden font-sans">
+            <div className="relative min-h-screen w-full bg-[#1a0505] font-sans">
                 
                 {/* 1. BACKGROUND IMAGE (Tanpa Overlay Hitam) */}
                 <div 
@@ -90,7 +101,7 @@ export default function MeeLantak() {
                 />
 
                 {/* 2. CONTENT AREA */}
-                <div className="relative z-10">
+                <div className="relative z-10 mt-[-1px]">
                     
                     {/* Hero Section */}
                     <div className="pt-20 pb-2 flex flex-col items-center justify-center text-center px-6">
@@ -101,8 +112,8 @@ export default function MeeLantak() {
                             className="w-48 md:w-64 object-contain mb-6 drop-shadow-xl" 
                             alt="Mee Lantak Logo" 
                         />
-                        <h1 className="text-4xl md:text-7xl font-black title-3d-mee uppercase tracking-tighter leading-none">
-                            MEE LANTAK
+                        <h1 className="text-4xl md:text-7xl font-black title-3d leading-none">
+                           MEE LANTAK
                         </h1>
                         <p className="mt-4 text-[#450a0a] bg-white/40 backdrop-blur-sm px-4 py-1.5 rounded-full font-black tracking-widest text-[11px] md:text-sm uppercase italic shadow-sm inline-block mx-auto">
                             Freshly Made • Bumiputera Quality • Makan Tambah Beb!
@@ -110,34 +121,59 @@ export default function MeeLantak() {
                     </div>
 
                     {/* TAB NAVIGATION */}
-                    <div className="flex justify-center mt-6 mb-10 relative z-10 px-4">
-                        <div className="bg-[#450a0a]/90 backdrop-blur-xl p-2 rounded-[2.5rem] border border-[#facc15]/30 shadow-2xl flex gap-2">
-                            <button
-                                onClick={() => setActiveTab('about')}
-                                className={`flex items-center gap-3 px-8 py-3 rounded-full font-black text-xs md:text-sm transition-all duration-300 border ${
-                                    activeTab === 'about'
-                                        ? 'bg-white text-[#450a0a] border-white scale-105 shadow-xl'
-                                        : 'bg-white/5 text-white border-white/10 hover:bg-white/10'
-                                }`}
-                            >
-                                <span>🏠</span>
-                                <span>ABOUT US</span>
-                            </button>
+<div className="sticky top-0 z-[40] flex justify-center w-full transition-all duration-500">
+    
+    {/* OVERLAY GRADIENT - Hanya muncul bila isSticky true */}
 
-                            <button
-                                onClick={() => setActiveTab('products')}
-                                className={`flex items-center gap-3 px-8 py-3 rounded-full font-black text-xs md:text-sm transition-all duration-300 border ${
-                                    activeTab === 'products'
-                                        ? 'bg-white text-[#450a0a] border-white scale-105 shadow-xl'
-                                        : 'bg-white/5 text-white border-white/10 hover:bg-white/10'
-                                }`}
-                            >
-                                <span>🎁</span>
-                                <span>PACKAGES</span>
-                            </button>
-                        </div>
-                    </div>
+<div className={`absolute inset-0 h-44 transition-opacity duration-500 pointer-events-none ${
+    isSticky ? 'opacity-100' : 'opacity-0'
+}`}>
+    {/* Layer 1: Solid Background (Bahagian paling atas yang betul-betul pekat) */}
+    <div className="absolute inset-0 h-32 bg-[#1a0505]"></div>
+    
+    {/* Layer 2: Gradient Smooth (Untuk pudar ke bawah) */}
+    <div className="absolute top-32 inset-0 h-20 bg-gradient-to-b from-[#1a0505] to-transparent"></div>
+</div>
 
+    <div className={`relative flex justify-center px-4 w-full transition-all duration-500 ${
+        isSticky ? 'pt-20 pb-4' : 'mt-6 mb-10'
+    }`}>
+        
+        <div className="bg-[#450a0a]/90 backdrop-blur-xl p-2 rounded-[2.5rem] border border-white/20 shadow-2xl flex gap-2">
+            <button
+         onClick={() => {
+            setActiveTab('about');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+    }}
+    className={`flex items-center gap-3 px-8 py-3 rounded-full font-black text-xs md:text-sm transition-all duration-300 border ${
+        activeTab === 'about'
+            ? 'bg-white text-[#4a0e1c] border-white scale-105 shadow-xl'
+            : 'bg-white/5 text-white border-white/10 hover:bg-white/10'
+    }`}
+>             
+
+                <span>🍦</span>
+                <span>ABOUT US</span>
+            </button>
+
+            <button
+                onClick={() => {
+                    setActiveTab('products');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                
+                }}
+                className={`flex items-center gap-3 px-8 py-3 rounded-full font-black text-xs md:text-sm transition-all duration-300 border ${
+                    activeTab === 'products'
+                        ? 'bg-white text-[#4a0e1c] border-white scale-105 shadow-xl'
+                        : 'bg-white/5 text-white border-white/10 hover:bg-white/10'
+                }`}
+            >
+                <span>🎁</span> 
+                <span>PACKAGES</span>
+            </button>
+        </div>
+    </div>
+</div>
                     <div className="max-w-6xl mx-auto px-6 pb-24">
                         <AnimatePresence mode="wait">
                             
@@ -173,8 +209,8 @@ export default function MeeLantak() {
                                                     <p className="text-2xl font-black text-white mt-1 uppercase tracking-widest">Since 2006</p>
                                                 </div>
                                                 <div className="bg-[#facc15] p-8 rounded-[2.5rem] text-center shadow-xl">
-                                                    <p className="text-[10px] uppercase font-black text-[#450a0a] tracking-widest mb-1">Status</p>
-                                                    <p className="text-2xl font-black text-[#450a0a]">ACTIVE 🫡</p>
+                                                    <p className="text-[10px] uppercase font-black text-[#450a0a] tracking-widest mb-1">Founder</p>
+                                                    <p className="text-2xl font-black text-[#450a0a]">ADZMI BIN TALIB</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -189,9 +225,9 @@ export default function MeeLantak() {
                                         <div className="bg-[#450a0a]/80 backdrop-blur-xl p-10 rounded-[2.5rem] border border-[#facc15]/30 text-white shadow-2xl">
                                             <h3 className="text-[10px] font-black tracking-widest uppercase text-[#facc15] mb-4">The Mission</h3>
                                             <ul className="font-bold space-y-3 italic text-sm">
-                                                <li>• Uncompromising Quality & hygiene.</li>
-                                                <li>• Vendor Empowerment & pricing.</li>
-                                                <li>• Efficient Logistics & delivery.</li>
+                                                <li>• Uncompromising quality & hygiene.</li>
+                                                <li>• Vendor empowerment & pricing.</li>
+                                                <li>• Efficient logistics & delivery.</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -214,7 +250,10 @@ export default function MeeLantak() {
                                                         <p className="text-[10px] font-black text-[#facc15] uppercase tracking-widest">Contact</p>
                                                         <p className="font-bold text-sm">Pn Zubaidah: +60 17-833 2301</p>
                                                     </div>
-                                                    <div>
+                                                </div>
+                                                <div className="w-fit">
+                                                        <p className="text-[10px] mb-2 font-black text-[#facc15] uppercase tracking-widest">Click below to visit our socials</p>
+                                                        
                                                         <a 
                                                                 href="https://www.facebook.com/profile.php?id=61560205845343" 
                                                                 target="_blank" 
@@ -230,7 +269,6 @@ export default function MeeLantak() {
                                                                 <span className="text-xs font-bold text-lime-900">Mee Lantak</span>
                                                         </a>
                                                     </div>
-                                                </div>
                                             </div>
                                         </div>
                                         <div className="h-[300px] lg:h-auto lg:w-1/2 bg-white relative min-h-[300px]">

@@ -62,7 +62,17 @@ export default function Soja() {
             fetchReviews();
         } catch (err) { console.error("Error delete:", err); }
     };
+        //4. sticky tab overlay
+            const [isSticky, setIsSticky] = useState(false);
 
+            useEffect(() => {
+                const handleScroll = () => {
+                    // Jika scroll lebih daripada 150px (adjust ikut tinggi hero anda), aktifkan overlay
+                    setIsSticky(window.scrollY > 300); 
+                };
+                window.addEventListener('scroll', handleScroll);
+                return () => window.removeEventListener('scroll', handleScroll);
+            }, []);
     return (
         <>
             <style dangerouslySetInnerHTML={{ __html: `
@@ -92,7 +102,7 @@ export default function Soja() {
 
             <Head title="Warong Soja - Official" />
             
-            <div className="relative min-h-screen w-full bg-[#1a110a] overflow-hidden">
+            <div className="relative min-h-screen w-full bg-[#1a110a] font-sans">
                 
                 {/* 1. BACKGROUND IMAGE (FIXED) */}
                 <div 
@@ -125,36 +135,61 @@ export default function Soja() {
                         <p className="mt-2 text-[#e5ba73] font-bold tracking-[0.3em] text-[10px] md:text-xs uppercase">Authentic Flavor • Soldier's Legacy</p>
                     </div>
 
-                    {/* TAB NAVIGATION */}
-                    <div className="flex justify-center gap-2 mt-10 mb-6 relative z-10">
-                        
-                        <div className="bg-[#1a2a3a]/90 backdrop-blur-md p-2 rounded-[2rem] border border-[#e5ba73]/30 shadow-xl flex gap-2">
-                            <button
-                                onClick={() => setActiveTab('about')}
-                                className={`flex items-center gap-2 px-8 py-3 rounded-full font-black text-sm transition-all duration-300 shadow-xl border ${
-                                    activeTab === 'about'
-                                        ? 'bg-white text-black border-white scale-105 shadow-[0_0_25px_rgba(255,255,255,0.4)]'
-                                        : 'bg-white/5 text-white border-white/10 hover:bg-white/10'
-                                }`}
-                            >
-                                <span className="text-lg">🏠</span>
-                                <span className={activeTab === 'about' ? 'text-[#1a2a3a]' : 'text-white'}>ABOUT US</span>
-                            </button>
+{/* TAB NAVIGATION */}
+<div className="sticky top-0 z-[40] flex justify-center w-full transition-all duration-500">
+    
+    {/* OVERLAY GRADIENT - Hanya muncul bila isSticky true */}
 
-                            {/* TAB: PACKAGES */}
-                            <button
-                                onClick={() => setActiveTab('products')}
-                                className={`flex items-center gap-2 px-8 py-3 rounded-full font-black text-sm transition-all duration-300 shadow-xl border ${
-                                    activeTab === 'products'
-                                        ? 'bg-white text-black border-white scale-105 shadow-[0_0_25px_rgba(255,255,255,0.4)]'
-                                        : 'bg-white/5 text-white border-white/10 hover:bg-white/10'
-                                }`}
-                            >
-                                <span className="text-lg">🎁</span>
-                                <span className={activeTab === 'products' ? 'text-[#1a2a3a]' : 'text-white'}>PACKAGES</span>
-                            </button>
-                        </div>
-                    </div>
+<div className={`absolute inset-0 h-44 transition-opacity duration-500 pointer-events-none ${
+    isSticky ? 'opacity-100' : 'opacity-0'
+}`}>
+    {/* Layer 1: Solid Background (Bahagian paling atas yang betul-betul pekat) */}
+    <div className="absolute inset-0 h-32 bg-[#1a0505]"></div>
+    
+    {/* Layer 2: Gradient Smooth (Untuk pudar ke bawah) */}
+    <div className="absolute top-32 inset-0 h-20 bg-gradient-to-b from-[#1a0505] to-transparent"></div>
+</div>
+
+    <div className={`relative flex justify-center px-4 w-full transition-all duration-500 ${
+        isSticky ? 'pt-20 pb-4' : 'mt-6 mb-10'
+    }`}>
+        
+        <div className="bg-[#1a2a3a]/90 backdrop-blur-xl p-2 rounded-[2.5rem] border border-white/20 shadow-2xl flex gap-2">
+            <button
+         onClick={() => {
+            setActiveTab('about');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+    }}
+    className={`flex items-center gap-3 px-8 py-3 rounded-full font-black text-xs md:text-sm transition-all duration-300 border ${
+        activeTab === 'about'
+            ? 'bg-white text-[#4a0e1c] border-white scale-105 shadow-xl'
+            : 'bg-white/5 text-white border-white/10 hover:bg-white/10'
+    }`}
+>             
+
+                <span>🍦</span>
+                <span>ABOUT US</span>
+            </button>
+
+            <button
+                onClick={() => {
+                    setActiveTab('products');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                
+                }}
+                className={`flex items-center gap-3 px-8 py-3 rounded-full font-black text-xs md:text-sm transition-all duration-300 border ${
+                    activeTab === 'products'
+                        ? 'bg-white text-[#4a0e1c] border-white scale-105 shadow-xl'
+                        : 'bg-white/5 text-white border-white/10 hover:bg-white/10'
+                }`}
+            >
+                <span>🎁</span> 
+                <span>PACKAGES</span>
+            </button>
+        </div>
+    </div>
+</div>
+
 
                     <div className="max-w-6xl mx-auto px-6 pb-5">
                         <AnimatePresence mode="wait">
@@ -299,7 +334,11 @@ export default function Soja() {
                 </div>
 
                 {/* SOSIAL MEDIA BUTTONS */}
+            <div className="space-y-2">
+                <p className="text-[10px] mb-2 font-black text-[#e5ba73] uppercase tracking-widest">Click below to visit our socials</p>
+                                                     
                 <div className="flex flex-wrap gap-3 pt-4">
+                    
                     <a 
                         href="https://www.facebook.com/profile.php?id=61589103419025" 
                         target="_blank" 
@@ -326,6 +365,7 @@ export default function Soja() {
                         <i className="fab fa-tiktok"></i>
                         <span>@warongsoja</span>
                     </a>
+                </div>
                 </div>
             </div>
         </div>
@@ -372,7 +412,7 @@ export default function Soja() {
         {/* TOP HEADER - MISSION STATUS */}
         <div className="text-center space-y-4">
             <div className="inline-block bg-red-600 text-white px-6 py-2 rounded-full text-xs font-black uppercase tracking-[0.2em] shadow-xl animate-pulse">
-                ⚠️ Limited Stock Mission
+                ⚠️ Limited Stock Mission. PROMOTION PRICE ONLY FOR THIS WEEK! ⚠️
             </div>
             <h2 className="text-5xl md:text-7xl font-black text-[#e5ba73] uppercase tracking-tighter italic">
                 Our Rations

@@ -60,11 +60,26 @@ export default function Home() {
                                 One Vision, <span className="text-red-600">Seven Pillars</span>
                             </h2>
                             <p className="text-lg leading-relaxed text-gray-200 font-medium opacity-90">
-                                Sabaah7 is a diversified company that manages seven core business pillars across multiple industries. 
-                                We build an integrated ecosystem that supports sustainable growth, entrepreneurship, and 
-                                community development through our strategic business divisions.
-                            </p>
-                        </div>
+        <span className="font-bold text-white">Sabaah7</span> is a diversified holding company managing 
+        <span className="text-red-500 font-bold"> 7 strategic pillars</span> across multiple industries. 
+        We build an integrated ecosystem designed for sustainable growth, entrepreneurship, and community empowerment.
+    </p> <br/>
+<div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:text-base font-bold text-gray-300 mb-3">
+        <div className="flex items-center gap-2"> <span className="text-red-600">01.</span> Agri-business & Livestock </div>
+        <div className="flex items-center gap-2"> <span className="text-red-600">02.</span> Integrated Services </div>
+        <div className="flex items-center gap-2"> <span className="text-red-600">03.</span> Food & Beverages Solutions </div>
+        <div className="flex items-center gap-2"> <span className="text-red-600">04.</span> Staple Food Supply</div>
+        <div className="flex items-center gap-2"> <span className="text-red-600">05.</span> Food Manufacturing & Processing </div>
+        <div className="flex items-center gap-2"> <span className="text-red-600">06.</span> Training & Business Academy </div>
+        <div className="flex items-center gap-2"> <span className="text-red-600">07.</span> Community & Humanitarian Impact </div>
+    </div>
+
+
+
+<p className="pt-4 text-sm font-black text-white border-t border-white/10">
+        Official Registration: <span className="text-red-500 uppercase">SSM: 202603100848 (003842584-V)</span>
+    </p>
+</div>
 
                         {/* LOGO GRID */}
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 place-items-center">

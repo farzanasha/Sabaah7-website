@@ -63,6 +63,18 @@ export default function JuniorIceCream() {
         } catch (err) { console.error("Error delete:", err); }
     };
 
+    //4. sticky tab overlay
+    const [isSticky, setIsSticky] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            // Jika scroll lebih daripada 150px (adjust ikut tinggi hero anda), aktifkan overlay
+            setIsSticky(window.scrollY > 300); 
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
         <>
             <style dangerouslySetInnerHTML={{ __html: `
@@ -71,8 +83,8 @@ export default function JuniorIceCream() {
                 
                 .title-3d { 
                     color: white; 
-                    -webkit-text-stroke: 2px #15803d; 
-                    text-shadow: 4px 4px 0px #15803d, 6px 6px 12px rgba(0,0,0,0.4);
+                    -webkit-text-stroke: 1px #2b522b; 
+                    text-shadow: 3px 3px 3px #1a110a, 6px 6px 15px rgba(0,0,0,0.5);
                 }
 
                 .glass-card-solid {
@@ -92,7 +104,7 @@ export default function JuniorIceCream() {
 
             <Head title="Aiskrim Junior - Official" />
             
-            <div className="relative min-h-screen w-full bg-white overflow-hidden">
+            <div className="relative min-h-screen w-full bg-white font-sans">
                 
                 {/* 1. BACKGROUND IMAGE (FIXED) */}
                 <div 
@@ -107,10 +119,10 @@ export default function JuniorIceCream() {
                 </div>
 
                 {/* 2. CONTENT AREA */}
-                <div className="relative z-10">
+                <div className="relative z-10 mt-[-1px]">
                     
                     {/* Hero Section */}
-                    <div className="h-[40vh] flex flex-col items-center justify-center text-center px-6">
+                    <div className="pt-20 pb-2 flex flex-col items-center justify-center text-center px-6">
                         <motion.img 
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
@@ -118,36 +130,65 @@ export default function JuniorIceCream() {
                             className="w-28 h-28 md:w-36 md:h-36 object-contain mb-4 drop-shadow-xl" 
                             alt="Logo" 
                         />
-                        <h1 className="text-4xl md:text-6xl font-black title-3d uppercase tracking-wider leading-none text-center">
-                            JUNIOR ICE CREAM
+                        <h1 className="text-4xl md:text-6xl font-black title-3d uppercase tracking-tighter leading-none text-center">
+                           JUNIOR ICE CREAM
                         </h1>
                     </div>
 
-                    {/* TAB NAVIGATION */}
-                    <div className="flex justify-center mb-10 px-6">
-                        <div className="bg-white/90 backdrop-blur-md p-2 rounded-[2rem] border border-lime-200 shadow-xl flex gap-2">
-                            <button 
-                                onClick={() => setActiveTab('about')}
-                                className={`px-8 py-3 rounded-full font-black text-xs md:text-sm uppercase tracking-widest transition-all ${
-                                    activeTab === 'about' 
-                                    ? 'bg-lime-600 text-white shadow-lg' 
-                                    : 'text-lime-800 hover:bg-lime-100'
-                                }`}
-                            >
-                                🍦 About Brand
-                            </button>
-                            <button 
-                                onClick={() => setActiveTab('products')}
-                                className={`px-8 py-3 rounded-full font-black text-xs md:text-sm uppercase tracking-widest transition-all ${
-                                    activeTab === 'products' 
-                                    ? 'bg-lime-600 text-white shadow-lg' 
-                                    : 'text-lime-800 hover:bg-lime-100'
-                                }`}
-                            >
-                                🎁 Packages
-                            </button>
-                        </div>
-                    </div>
+{/* TAB NAVIGATION */}
+<div className="sticky top-0 z-[40] flex justify-center w-full transition-all duration-500">
+    
+    {/* OVERLAY GRADIENT - Hanya muncul bila isSticky true */}
+
+<div className={`absolute inset-0 h-44 transition-opacity duration-500 pointer-events-none ${
+    isSticky ? 'opacity-100' : 'opacity-0'
+}`}>
+    {/* Layer 1: Solid Background (Bahagian paling atas yang betul-betul pekat) */}
+    <div className="absolute inset-0 h-32 bg-white"></div>
+    
+    {/* Layer 2: Gradient Smooth (Untuk pudar ke bawah) */}
+    <div className="absolute top-32 inset-0 h-20 bg-gradient-to-b from-white to-transparent"></div>
+</div>
+
+    <div className={`relative flex justify-center px-4 w-full transition-all duration-500 ${
+        isSticky ? 'pt-20 pb-4' : 'mt-6 mb-10'
+    }`}>
+        
+        <div className="bg-lime-600/90 backdrop-blur-xl p-2 rounded-[2.5rem] border border-white/20 shadow-2xl flex gap-2">
+            <button
+         onClick={() => {
+            setActiveTab('about');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+    }}
+    className={`flex items-center gap-3 px-8 py-3 rounded-full font-black text-xs md:text-sm transition-all duration-300 border ${
+        activeTab === 'about'
+            ? 'bg-white text-[#4a0e1c] border-white scale-105 shadow-xl'
+            : 'bg-white/5 text-white border-white/10 hover:bg-white/10'
+    }`}
+>             
+
+                <span>🍦</span>
+                <span>ABOUT US</span>
+            </button>
+
+            <button
+                onClick={() => {
+                    setActiveTab('products');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                
+                }}
+                className={`flex items-center gap-3 px-8 py-3 rounded-full font-black text-xs md:text-sm transition-all duration-300 border ${
+                    activeTab === 'products'
+                        ? 'bg-white text-[#4a0e1c] border-white scale-105 shadow-xl'
+                        : 'bg-white/5 text-white border-white/10 hover:bg-white/10'
+                }`}
+            >
+                <span>🎁</span> 
+                <span>PACKAGES</span>
+            </button>
+        </div>
+    </div>
+</div>
 
                     <div className="max-w-6xl mx-auto px-6 pb-10">
                         <AnimatePresence mode="wait">
@@ -169,7 +210,7 @@ export default function JuniorIceCream() {
                                             <div className="w-full lg:w-3/5 space-y-6">
                                                 <div>
                                                     <h2 className="text-5xl font-black text-lime-900 uppercase tracking-tighter leading-none mb-2">
-                                                        OUR <span className="text-lime-600 drop-shadow-sm">STORY</span>
+                                                        OUR <span className="text-lime-700 drop-shadow-sm">STORY</span>
                                                     </h2>
                                                     <p className="text-lime-950 text-xl font-black leading-tight">
                                                         Founded in <span className="bg-lime-400 px-2 py-0.5 rounded-lg shadow-sm">2018</span> by Jainal Arifin.
@@ -225,7 +266,7 @@ export default function JuniorIceCream() {
                                         <div className="grid md:grid-cols-3 gap-12">
                                             {[
                                                 { icon: "🤝", title: "Friendly", desc: "Treating everyone equally regardless of age, race, or religion, with a special priority for children." },
-                                                { icon: "✅", title: "JAKIM Halal", desc: "Utilizing ingredients sourced from items that bear the Halal logo verified by JAKIM." },
+                                                { icon: "✅", title: "Muslim Homemade ", desc: "Quality Muslim home-made products, prepared with carefully selected and wholesome ingredients." },
                                                 { icon: "🧼", title: "Cleanliness", desc: "Processing and preparation according to 100% SOPs to maintain absolute hygiene." }
                                             ].map((item, i) => (
                                                 <div key={i} className="flex flex-col items-center text-center group">
@@ -247,91 +288,13 @@ export default function JuniorIceCream() {
                                         </div>
 
                                         <div className="grid lg:grid-cols-2 gap-10">
-                                            {/* AMPANG BRANCH */}
-                                            <motion.div whileHover={{ y: -5 }} className="bg-white/40 p-6 rounded-[3rem] border border-white/60 shadow-xl space-y-5">
-                                                <div className="flex justify-between items-start px-2">
-                                                    <div>
-                                                        <div className="bg-lime-600 text-white px-5 py-1.5 rounded-full inline-block font-black text-[10px] tracking-widest shadow-md">AMPANG BRANCH</div>
-                                                        <h3 className="text-xl font-black text-lime-900 mt-3 uppercase">Ampang, Selangor</h3>
-                                                    </div>
-                                                    <span className="text-3xl">📍</span>
-                                                </div>
-                                                <div className="h-[250px] rounded-[2.5rem] overflow-hidden border-4 border-white shadow-inner relative group">
-                                                    <iframe 
-                                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15934.894383186253!2d101.7500!3d3.1500!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc364654b732e7%3A0xf63989c922579b2!2sAmpang%20Jaya%2C%20Selangor!5e0!3m2!1sen!2smy!4v1714240000000!5m2!1sen!2smy" 
-                                                        className="absolute inset-0 w-full h-full border-0 grayscale group-hover:grayscale-0 transition-all duration-500" 
-                                                        allowFullScreen="" loading="lazy"
-                                                    ></iframe>
-                                                </div>
-
-                                                <div className="px-2 space-y-4">
-                                                    {/* Section Telefon */}
-                                                    <div className="flex items-center space-x-3">
-                                                        <div className="w-8 h-8 bg-lime-100 rounded-full flex items-center justify-center text-lime-700">
-                                                            <i className="fas fa-phone-alt text-xs"></i>
-                                                        </div>
-                                                        <div className="space-y-0.5">
-                                                            <p className="text-[10px] font-black text-lime-800 uppercase tracking-widest leading-none">Contact En Dzul</p>
-                                                            <p className="text-sm font-bold text-lime-900 leading-none">+60 11-1119 0377</p>
-                                                        </div>
-                                                    </div>
-
-                                                    {/* Section Emel */}
-                                                    <div className="flex items-center space-x-3">
-                                                        <div className="w-8 h-8 bg-lime-100 rounded-full flex items-center justify-center text-lime-700">
-                                                            <i className="fas fa-envelope text-xs"></i>
-                                                        </div>
-                                                        <div className="space-y-0.5">
-                                                            <p className="text-[10px] font-black text-lime-800 uppercase tracking-widest leading-none">Email Address</p>
-                                                            <p className="text-sm font-bold text-lime-900 leading-none">dzulqarnainadzmi@sabaah7.com</p>
-                                                        </div>
-                                                    </div>
-
-                                                    <div className="border-t border-lime-200/50 w-full pt-4">
-                                                        <div className="flex flex-wrap gap-3 items-center">
-                                                            
-                                                            {/* Instagram Badge */}
-                                                            <a 
-                                                                href="https://instagram.com/junioricecream_ampang" 
-                                                                target="_blank" 
-                                                                rel="noopener noreferrer"
-                                                                className="flex items-center space-x-2 bg-white/80 hover:bg-white px-3 py-1.5 rounded-full shadow-sm border border-lime-100 transition-all duration-300 hover:scale-105 group"
-                                                            >
-                                                                <i 
-                                                                    className="fab fa-instagram text-xl" 
-                                                                    style={{
-                                                                        background: "linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)",
-                                                                        WebkitBackgroundClip: "text",
-                                                                        WebkitTextFillColor: "transparent",
-                                                                        display: "inline-block"
-                                                                    }}
-                                                                ></i>
-                                                                <span className="text-xs font-bold text-lime-900">@junioricecream_ampang</span>
-                                                            </a>
-
-                                                            {/* TikTok Badge */}
-                                                            <a 
-                                                                href="https://tiktok.com/@junioricecream_ampang" 
-                                                                target="_blank" 
-                                                                rel="noopener noreferrer"
-                                                                className="flex items-center space-x-2 bg-white/80 hover:bg-white px-3 py-1.5 rounded-full shadow-sm border border-lime-100 transition-all duration-300 hover:scale-105"
-                                                            >
-                                                                <i className="fab fa-tiktok text-lg text-black"></i>
-                                                                <span className="text-xs font-bold text-lime-900">@junioricecream_ampang</span>
-                                                            </a>
-
-                                                        </div>
-                                                    </div>
-                                                </div>                                               
-                                       
-                                            </motion.div>
-
+                                            
                                             {/* IPOH BRANCH */}
                                             <motion.div whileHover={{ y: -5 }} className="bg-white/40 p-6 rounded-[3rem] border border-white/60 shadow-xl space-y-5">
                                                 <div className="flex justify-between items-start px-2">
                                                     <div>
-                                                        <div className="bg-lime-600 text-white px-5 py-1.5 rounded-full inline-block font-black text-[10px] tracking-widest shadow-md">AMPANG BRANCH</div>
-                                                        <h3 className="text-xl font-black text-lime-900 mt-3 uppercase">Ipoh, Selangor</h3>
+                                                        <div className="bg-lime-600 text-white px-5 py-1.5 rounded-full inline-block font-black text-[10px] tracking-widest shadow-md">OUR HEADQUARTERS</div>
+                                                        <h3 className="text-xl font-black text-lime-900 mt-3 uppercase">Ipoh, Perak</h3>
                                                     </div>
                                                     <span className="text-3xl">📍</span>
                                                 </div>
@@ -366,23 +329,14 @@ export default function JuniorIceCream() {
                                                         </div>
                                                     </div>
 
-                                                    <div className="border-t border-lime-200/50 w-full pt-4">
+                                                    <div className="border-t border-lime-600/50 w-full pt-4">
+                                                        
+                                                        <p className="text-[10px] mb-2 font-black text-lime-800 uppercase tracking-widest">Click below to visit our socials</p>
+                                                      
                                                         <div className="flex flex-wrap gap-3 items-center">
-                                                            <a 
-                                                                href="https://www.facebook.com/profile.php?id=61588815791465" 
-                                                                target="_blank" 
-                                                                rel="noopener noreferrer"
-                                                                className="flex items-center space-x-2 bg-white/80 hover:bg-white px-3 py-1.5 rounded-full shadow-sm border border-lime-100 transition-all duration-300 hover:scale-105 group"
-                                                            >
-                                                                <i className="fab fa-facebook text-xl" 
-                                                                    style={{
-                                                                        color: "#1877F2", // Biru rasmi Facebook
-                                                                        display: "inline-block"
-                                                                    }}
-                                                                    ></i>
-                                                                <span className="text-xs font-bold text-lime-900">Junior Ice Cream Ampang</span>
-                                                            </a>
+                                                            
                                                             {/* Instagram Badge */}
+
                                                             <a 
                                                                 href="https://instagram.com/junioricecream_ipoh" 
                                                                 target="_blank" 
@@ -414,9 +368,105 @@ export default function JuniorIceCream() {
 
                                                         </div>
                                                     </div>
+                                                </div>                                         
+                                            </motion.div>   
+
+                                            {/* AMPANG BRANCH */}
+                                            <motion.div whileHover={{ y: -5 }} className="bg-white/40 p-6 rounded-[3rem] border border-white/60 shadow-xl space-y-5">
+                                                <div className="flex justify-between items-start px-2">
+                                                    <div>
+                                                        <div className="bg-lime-600 text-white px-5 py-1.5 rounded-full inline-block font-black text-[10px] tracking-widest shadow-md">AMPANG BRANCH</div>
+                                                        <h3 className="text-xl font-black text-lime-900 mt-3 uppercase">Ampang, Kuala Lumpur</h3>
+                                                    </div>
+                                                    <span className="text-3xl">📍</span>
+                                                </div>
+                                                <div className="h-[250px] rounded-[2.5rem] overflow-hidden border-4 border-white shadow-inner relative group">
+                                                    <iframe 
+                                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15934.894383186253!2d101.7500!3d3.1500!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc364654b732e7%3A0xf63989c922579b2!2sAmpang%20Jaya%2C%20Selangor!5e0!3m2!1sen!2smy!4v1714240000000!5m2!1sen!2smy" 
+                                                        className="absolute inset-0 w-full h-full border-0 grayscale group-hover:grayscale-0 transition-all duration-500" 
+                                                        allowFullScreen="" loading="lazy"
+                                                    ></iframe>
+                                                </div>
+
+                                                <div className="px-2 space-y-4">
+                                                    {/* Section Telefon */}
+                                                    <div className="flex items-center space-x-3">
+                                                        <div className="w-8 h-8 bg-lime-100 rounded-full flex items-center justify-center text-lime-700">
+                                                            <i className="fas fa-phone-alt text-xs"></i>
+                                                        </div>
+                                                        <div className="space-y-0.5">
+                                                            <p className="text-[10px] font-black text-lime-800 uppercase tracking-widest leading-none">Contact En Dzul</p>
+                                                            <p className="text-sm font-bold text-lime-900 leading-none">+60 11-1119 0377</p>
+                                                        </div>
+                                                    </div>
+
+                                                    {/* Section Emel */}
+                                                    <div className="flex items-center space-x-3">
+                                                        <div className="w-8 h-8 bg-lime-100 rounded-full flex items-center justify-center text-lime-700">
+                                                            <i className="fas fa-envelope text-xs"></i>
+                                                        </div>
+                                                        <div className="space-y-0.5">
+                                                            <p className="text-[10px] font-black text-lime-800 uppercase tracking-widest leading-none">Email Address</p>
+                                                            <p className="text-sm font-bold text-lime-900 leading-none">dzulqarnainadzmi@sabaah7.com</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="border-t border-lime-600/50 w-full pt-4">
+                                                    <p className="text-[10px] mb-2 font-black text-lime-800 uppercase tracking-widest">Click below to visit our socials</p>
+                                                        
+                                                        <div className="flex flex-wrap gap-3 items-center">
+                                                            
+
+                                                            <a 
+                                                                href="https://www.facebook.com/profile.php?id=61588815791465" 
+                                                                target="_blank" 
+                                                                rel="noopener noreferrer"
+                                                                className="flex items-center space-x-2 bg-white/80 hover:bg-white px-3 py-1.5 rounded-full shadow-sm border border-lime-100 transition-all duration-300 hover:scale-105 group"
+                                                            >
+                                                                <i className="fab fa-facebook text-xl" 
+                                                                    style={{
+                                                                        color: "#1877F2", // Biru rasmi Facebook
+                                                                        display: "inline-block"
+                                                                    }}
+                                                                    ></i>
+                                                                <span className="text-xs font-bold text-lime-900">Junior Ice Cream Ampang</span>
+                                                            </a>
+
+                                                            {/* Instagram Badge */}
+                                                            <a 
+                                                                href="https://instagram.com/junioricecream_ampang" 
+                                                                target="_blank" 
+                                                                rel="noopener noreferrer"
+                                                                className="flex items-center space-x-2 bg-white/80 hover:bg-white px-3 py-1.5 rounded-full shadow-sm border border-lime-100 transition-all duration-300 hover:scale-105 group"
+                                                            >
+                                                                <i 
+                                                                    className="fab fa-instagram text-xl" 
+                                                                    style={{
+                                                                        background: "linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)",
+                                                                        WebkitBackgroundClip: "text",
+                                                                        WebkitTextFillColor: "transparent",
+                                                                        display: "inline-block"
+                                                                    }}
+                                                                ></i>
+                                                                <span className="text-xs font-bold text-lime-900">@junioricecream_ampang</span>
+                                                            </a>
+
+                                                            {/* TikTok Badge */}
+                                                            <a 
+                                                                href="https://tiktok.com/@junioricecream_ampang" 
+                                                                target="_blank" 
+                                                                rel="noopener noreferrer"
+                                                                className="flex items-center space-x-2 bg-white/80 hover:bg-white px-3 py-1.5 rounded-full shadow-sm border border-lime-100 transition-all duration-300 hover:scale-105"
+                                                            >
+                                                                <i className="fab fa-tiktok text-lg text-black"></i>
+                                                                <span className="text-xs font-bold text-lime-900">@junioricecream_ampang</span>
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
                                                 </div>                                               
                                        
-                                            </motion.div>                                                                                
+                                            </motion.div>                                                                             
                                         </div>
                                     </div>
                                 </motion.div>
@@ -438,7 +488,7 @@ export default function JuniorIceCream() {
                                     </div>
 
                                     <div className="flex flex-wrap justify-center gap-10">
-                                        {['pakeja.png', 'pakejb.jpg', 'pakejc.png'].map((img, i) => (
+                                        {['pakeja.png', 'pakejbaru.png', 'pakejc.png'].map((img, i) => (
                                             <motion.img 
                                                 key={i}
                                                 whileHover={{ y: -10, rotate: 2 }}
