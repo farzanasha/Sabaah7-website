@@ -34,8 +34,8 @@ export default function Home() {
                         <h1 className="text-3xl md:text-5xl font-black drop-shadow-lg uppercase tracking-tighter leading-none">
                             Integrated Global <span className="text-red-600">Ecosystem</span>
                         </h1>
-                        <p className="mt-4 text-lg md:text-xl text-gray-200 max-w-xl font-medium uppercase">
-                            Intergret business solution | supply and operation
+                        <p className="mt-4 text-lg md:text-xl text-gray-200 max-w-xl ">
+                            Intergret business solution | Supply and operation
                         </p>
                         
                         
@@ -49,7 +49,7 @@ export default function Home() {
                 </div>
 
                 {/* CONTENT BOX (GLASSMORPHISM) */}
-                <div className="py-20 px-6 flex justify-center -mt-10">
+                <div className="py-15 px-6 flex justify-center -mt-10">
                     <motion.div 
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -63,9 +63,9 @@ export default function Home() {
                             </h2>
                             <p className="text-lg text-justify leading-relaxed text-gray-200 font-medium opacity-90">
         <span className="font-bold text-white">Sabaah7</span> is a diversified holding company managing 
-        <span className="text-red-500 font-bold"> 7 strategic pillars</span> across multiple industries.We build an integrated ecosystem designed for sustainable growth, entrepreneurship, and community empowerment.
+        <span className="text-red-500 font-bold"> 7 strategic pillars</span> across multiple industries. We build an integrated ecosystem designed for sustainable growth, entrepreneurship, and community empowerment.
     </p> <br/>
-<div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:text-base text-justify font-bold text-gray-300 mb-3">
+<div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:text-base text-left font-bold text-gray-300 mb-3">
         <div className="flex items-justiy gap-2"> <span className="text-red-600">01.</span> Agri-business & Livestock </div>
         <div className="flex items-center gap-2"> <span className="text-red-600">02.</span> Integrated Services </div>
         <div className="flex items-center gap-2"> <span className="text-red-600">03.</span> Food & Beverages Solutions </div>
