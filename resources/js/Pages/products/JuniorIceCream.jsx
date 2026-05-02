@@ -488,7 +488,7 @@ export default function JuniorIceCream() {
                                     </div>
 
                                     <div className="flex flex-wrap justify-center gap-10">
-                                        {['pakeja.png', 'pakejbaru.png', 'pakejc.png'].map((img, i) => (
+                                        {['packagea.png', 'packageb.png', 'packagec.png'].map((img, i) => (
                                             <motion.img 
                                                 key={i}
                                                 whileHover={{ y: -10, rotate: 2 }}
@@ -500,7 +500,7 @@ export default function JuniorIceCream() {
                                     </div>
 
                                     <div className="flex justify-center">
-                                        <img src="/images/products/benefit.png" className="w-full max-w-5xl rounded-[3rem] shadow-2xl border-[12px] border-white" alt="Benefits" />
+                                        <img src="/images/products/benefits.png" className="w-full max-w-5xl rounded-[3rem] shadow-2xl border-[12px] border-white" alt="Benefits" />
                                     </div>
 
                                     <div className="text-center pt-10">
