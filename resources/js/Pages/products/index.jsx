@@ -8,7 +8,7 @@ export default function Index() {
             title: '🍽️ Food & Beverage',
             products: [
                 { name: 'Junior Ice Cream', logo: '/images/logos/junior.png', href: '/products/junior' },
-                { name: 'Warung Soja', logo: '/images/logos/soja.png', href: '/products/soja' },
+                { name: 'Warong Soja', logo: '/images/logos/soja.png', href: '/products/soja' },
             ]
         },
         {

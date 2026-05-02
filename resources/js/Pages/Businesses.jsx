@@ -14,7 +14,7 @@ export default function Businesses() {
     const locations = [
         { id: 1, name: "Junior Ice Cream (Ipoh)", pos: { lat: 4.6644, lng: 101.0748 } },
         { id: 2, name: "Junior Ice Cream (Ampang)", pos: { lat: 3.1491, lng: 101.7618 } },
-        { id: 3, name: "Warung Soja (Masjid Tanah)", pos: { lat: 2.3500, lng: 102.1000 } },
+        { id: 3, name: "Warong Soja (Masjid Tanah)", pos: { lat: 2.3500, lng: 102.1000 } },
         { id: 4, name: "Kecik Molek (Masjid Tanah)", pos: { lat: 2.4500, lng: 102.1000 } },
         { id: 5, name: "Mee Lantak (Durian Tunggal)", pos: { lat: 2.3120, lng: 102.2800 } },
     ];
@@ -34,7 +34,7 @@ export default function Businesses() {
         { title: "Staple Food", icon: "noodles.png", active: true, subs: [{ name: "Mee Lantak", link: "/products/meelantak" }] },
         { title: "Food & Beverage", icon: "food.png", active: true, subs: [
             { name: "Junior Ice Cream", link: "/products/junior" }, 
-            { name: "Warung Soja", link: "/products/soja" }
+            { name: "Warong Soja", link: "/products/soja" }
         ]},
         { title: "Food Manufacturing & Processing", icon: "factory.png", active: false, subs: [] },
         { title: "Training & Business Academy", icon: "academy.png", active: false, subs: [] },
@@ -171,7 +171,7 @@ export default function Businesses() {
                                         <p className="text-red-500 font-black text-[12px] tracking-widest mb-1 uppercase">Food & Beverage</p>
                                         <p className="text-white font-bold text-sm uppercase">Junior Ice Cream</p>
                                         <p className="text-gray-300 text-xs mt-1"> Ipoh, Perak (HQ) & Ampang, Selangor</p>
-                                        <p className="text-white font-bold text-sm uppercase mt-4">Warung Sajo</p>
+                                        <p className="text-white font-bold text-sm uppercase mt-4">Warong Sajo</p>
                                         <p className="text-gray-300 text-xs mt-1">Masjid Tanah, Melaka</p>
                                         <hr className="border-t border-white/10 my-4" />
                                     </div>

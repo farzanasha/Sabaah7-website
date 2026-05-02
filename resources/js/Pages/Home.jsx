@@ -81,7 +81,7 @@ export default function Home() {
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 place-items-center">
                             {[
                                 { name: "Junior Ice Cream", logo: "junior.png", href: "/products/junior" },
-                                { name: "Warung Soja", logo: "soja.png", href: "/products/soja" },
+                                { name: "Warong Soja", logo: "soja.png", href: "/products/soja" },
                                 { name: "Kecik Molek", logo: "kecil.png", href: "/products/kecil-molek" },
                                 { name: "Mee Lantak", logo: "meelantak.png", href: "/products/meelantak" }
                             ].map((item, index) => (

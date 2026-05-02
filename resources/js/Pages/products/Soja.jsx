@@ -220,10 +220,10 @@ export default function Soja() {
 
                                                 <div className="space-y-4">
                                                     <p className="text-white font-bold leading-relaxed text-lg italic opacity-90 border-l-4 border-[#e5ba73] pl-4 bg-white/5 p-4 rounded-r-2xl text-justify">
-                                                        "Warung Soja was inspired by the story of a housewife who tirelessly prepared food for her army soldier husband, ensuring he stayed healthy and energetic to serve the country."
+                                                        "Warong Soja was inspired by the story of a housewife who tirelessly prepared food for her army soldier husband, ensuring he stayed healthy and energetic to serve the country."
                                                     </p>
                                                     <p className="text-white/80 text-sm font-medium leading-relaxed text-justify">
-                                                        The name "Soja" is the classic local pronunciation of "soldier". Driven by her passion for cooking and inspired by her father, who was also a warung vendor, she decided to open her own warung.
+                                                        The name "Soja" is the classic local pronunciation of "soldier". Driven by her passion for cooking and inspired by her father, who was also a warong vendor, she decided to open her own warong.
                                                     </p>
                                                     <p className="text-white/80 text-sm font-medium leading-relaxed text-justify">
                                                         Our identity features a soldier's mess tin and palm oil fronds, representing our original establishment within a palm oil estate in Melaka.

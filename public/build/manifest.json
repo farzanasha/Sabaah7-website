@@ -1,6 +1,6 @@
 {
-  "_AuthenticatedLayout-DQSVEPs8.js": {
-    "file": "assets/AuthenticatedLayout-DQSVEPs8.js",
+  "_AuthenticatedLayout--_SeEsZ9.js": {
+    "file": "assets/AuthenticatedLayout--_SeEsZ9.js",
     "name": "AuthenticatedLayout",
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
@@ -47,13 +47,13 @@
     ]
   },
   "resources/js/Pages/About.jsx": {
-    "file": "assets/About-BhpnSIl6.js",
+    "file": "assets/About-Dkj2ktVK.js",
     "name": "About",
     "src": "resources/js/Pages/About.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-DQSVEPs8.js"
+      "_AuthenticatedLayout--_SeEsZ9.js"
     ]
   },
   "resources/js/Pages/Auth/ConfirmPassword.jsx": {
@@ -132,64 +132,64 @@
     ]
   },
   "resources/js/Pages/Businesses.jsx": {
-    "file": "assets/Businesses-DUrXheOI.js",
+    "file": "assets/Businesses-CjfxvtQg.js",
     "name": "Businesses",
     "src": "resources/js/Pages/Businesses.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-DQSVEPs8.js"
+      "_AuthenticatedLayout--_SeEsZ9.js"
     ]
   },
   "resources/js/Pages/Contact.jsx": {
-    "file": "assets/Contact-CYCBB0L6.js",
+    "file": "assets/Contact-BVRN59_c.js",
     "name": "Contact",
     "src": "resources/js/Pages/Contact.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-DQSVEPs8.js"
+      "_AuthenticatedLayout--_SeEsZ9.js"
     ]
   },
   "resources/js/Pages/Gallery.jsx": {
-    "file": "assets/Gallery-BIem0fur.js",
+    "file": "assets/Gallery-HgB2LW0C.js",
     "name": "Gallery",
     "src": "resources/js/Pages/Gallery.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-DQSVEPs8.js"
+      "_AuthenticatedLayout--_SeEsZ9.js"
     ]
   },
   "resources/js/Pages/Home.jsx": {
-    "file": "assets/Home-BeGABpGc.js",
+    "file": "assets/Home-COblL0NB.js",
     "name": "Home",
     "src": "resources/js/Pages/Home.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-DQSVEPs8.js"
+      "_AuthenticatedLayout--_SeEsZ9.js"
     ]
   },
   "resources/js/Pages/Membership.jsx": {
-    "file": "assets/Membership-EKYxIRjU.js",
+    "file": "assets/Membership-4DwJCC0J.js",
     "name": "Membership",
     "src": "resources/js/Pages/Membership.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-DQSVEPs8.js"
+      "_AuthenticatedLayout--_SeEsZ9.js"
     ]
   },
   "resources/js/Pages/Profile/Edit.jsx": {
-    "file": "assets/Edit-DOrywQCX.js",
+    "file": "assets/Edit-rFojLHhU.js",
     "name": "Edit",
     "src": "resources/js/Pages/Profile/Edit.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
       "resources/js/Pages/Profile/Partials/DeleteUserForm.jsx",
-      "_AuthenticatedLayout-DQSVEPs8.js",
+      "_AuthenticatedLayout--_SeEsZ9.js",
       "resources/js/Pages/Profile/Partials/UpdatePasswordForm.jsx",
       "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.jsx"
     ]
@@ -233,67 +233,67 @@
     ]
   },
   "resources/js/Pages/products/JuniorIceCream.jsx": {
-    "file": "assets/JuniorIceCream-BSpljl2z.js",
+    "file": "assets/JuniorIceCream-DQaRqTMV.js",
     "name": "JuniorIceCream",
     "src": "resources/js/Pages/products/JuniorIceCream.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-DQSVEPs8.js"
+      "_AuthenticatedLayout--_SeEsZ9.js"
     ]
   },
   "resources/js/Pages/products/KecilMolek.jsx": {
-    "file": "assets/KecilMolek-DX6yLI3p.js",
+    "file": "assets/KecilMolek-BWz0JWmd.js",
     "name": "KecilMolek",
     "src": "resources/js/Pages/products/KecilMolek.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-DQSVEPs8.js"
+      "_AuthenticatedLayout--_SeEsZ9.js"
     ]
   },
   "resources/js/Pages/products/MeeLantak.jsx": {
-    "file": "assets/MeeLantak-DXw51BsA.js",
+    "file": "assets/MeeLantak-BRT_Y8_c.js",
     "name": "MeeLantak",
     "src": "resources/js/Pages/products/MeeLantak.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-DQSVEPs8.js"
+      "_AuthenticatedLayout--_SeEsZ9.js"
     ]
   },
   "resources/js/Pages/products/ProductDetail.jsx": {
-    "file": "assets/ProductDetail-elBsmANV.js",
+    "file": "assets/ProductDetail-BR-hBSMy.js",
     "name": "ProductDetail",
     "src": "resources/js/Pages/products/ProductDetail.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-DQSVEPs8.js"
+      "_AuthenticatedLayout--_SeEsZ9.js"
     ]
   },
   "resources/js/Pages/products/Soja.jsx": {
-    "file": "assets/Soja-DigB98I2.js",
+    "file": "assets/Soja-BE0HiuAT.js",
     "name": "Soja",
     "src": "resources/js/Pages/products/Soja.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-DQSVEPs8.js"
+      "_AuthenticatedLayout--_SeEsZ9.js"
     ]
   },
   "resources/js/Pages/products/index.jsx": {
-    "file": "assets/products-D6WLt7DR.js",
+    "file": "assets/products-BUEudbHB.js",
     "name": "products",
     "src": "resources/js/Pages/products/index.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-D9CfDZ_c.js",
-      "_AuthenticatedLayout-DQSVEPs8.js"
+      "_AuthenticatedLayout--_SeEsZ9.js"
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-D6rTVfCC.js",
+    "file": "assets/app-DzJ893FQ.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
