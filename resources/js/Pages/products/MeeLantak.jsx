@@ -248,7 +248,11 @@ export default function MeeLantak() {
                                                     </div>
                                                     <div>
                                                         <p className="text-[10px] font-black text-[#facc15] uppercase tracking-widest">Contact</p>
-                                                        <p className="font-bold text-sm">Pn Zubaidah: +60 17-833 2301</p>
+                                                        <p className="font-bold text-sm">+60 11 6222 0061</p>
+                                                    </div>
+                                                    <div>
+                                                        <p className="text-[10px] font-black text-[#facc15] uppercase tracking-widest">Email</p>
+                                                        <p className="font-bold text-sm">info.sabaah7@gmail.com</p>
                                                     </div>
                                                 </div>
                                                 <div className="w-fit">
@@ -299,7 +303,7 @@ export default function MeeLantak() {
                                     <motion.a 
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
-                                        href="https://wa.me/60178332301?text=Hi%20Mee%20Lantak!%20I%20have%20an%20inquiry%20about%20your%20products." 
+                                        href="https://wa.me/601162220061?text=Hi%20Mee%20Lantak!%20I%20have%20an%20inquiry%20about%20your%20products." 
                                         target="_blank"
                                         className="bg-green-600 hover:bg-green-500 text-white font-black px-12 py-5 rounded-2xl flex items-center gap-4 shadow-xl transition-all uppercase tracking-widest text-lg"
                                     >

@@ -305,14 +305,14 @@ export default function KecikMolek() {
                                                         <p className="text-white font-bold text-sm">9:00 AM – 6:00 PM</p>
                                                     </div>
                                                     <div className="space-y-1">
-                                                        <p className="text-[10px] font-black text-gray-300 uppercase tracking-widest">Contact (PIC)</p>
-                                                        <p className="text-white font-bold text-sm">Pn Siti Aminah</p>
+                                                        <p className="text-[10px] font-black text-gray-300 uppercase tracking-widest">Contact</p>
+                                                        <p className="text-white font-bold text-sm">+60 11 6222 0061</p>
                                                     </div>
                                                 </div>
 
                                                 <div className="space-y-1">
                                                     <p className="text-[10px] font-black text-gray-300 uppercase tracking-widest">Email Address</p>
-                                                    <p className="text-white font-bold text-sm break-all">aminahadzmi.sabaah7@gmail.com</p>
+                                                    <p className="text-white font-bold text-sm break-all">info.sabaah7@gmail.com</p>
                                                 </div>
 
                                                 {/* SOCIAL MEDIA BUTTONS - ADDED BACK HERE */}
@@ -394,12 +394,12 @@ export default function KecikMolek() {
                                     <motion.a 
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
-                                        href="https://wa.me/601111127295?text=Hi%20Siti%20Aminah!%20I%20have%20an%20inquiry%20about%20Kecik%20Molek%20tailoring%20services." 
+                                        href="https://wa.me/601162220061?text=Hi%20kecik%20MOLEK!%20I%20have%20an%20inquiry%20about%20Kecik%20Molek%20tailoring%20services." 
                                         target="_blank"
                                         className="bg-green-600 hover:bg-green-500 text-white font-black px-12 py-5 rounded-2xl flex items-center gap-4 shadow-xl transition-all uppercase tracking-widest text-lg"
                                     >
                                         <i className="fab fa-whatsapp text-2xl"></i>
-                                        Inquiry via Siti Aminah
+                                        Inquiry via whatsapp
                                     </motion.a>
                                 </motion.div>
                             )}

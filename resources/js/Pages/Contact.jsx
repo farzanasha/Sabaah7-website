@@ -60,8 +60,8 @@ export default function Contact() {
                                             <span>📞</span> Call or WhatsApp
                                         </p>
                                         <div className="space-y-2 text-lg font-bold">
-                                            <a href="https://wa.me/601111190377?text=Hi Mr Dzulqarnain, I've got inquiry about Sabaah7" className="hover:text-red-400 transition cursor-default">+60 11-1119 0377 <span className="text-white/50 text-sm font-medium">(Dzulqarnain Adzmi)<br></br></span></a>
-                                            <a href="https://wa.me/601165139295?text=Hi Mr Prabu, I've got inquiry about Sabaah7" className="hover:text-red-400 transition cursor-default">+60 11-6513 9295 <span className="text-white/50 text-sm font-medium">(Prabu Daymudoo)</span></a>
+                                            <a href="https://wa.me/+601162220061?text=Hi, I've got inquiry about Sabaah7" className="hover:text-red-400 transition cursor-default">+6011 6222 0061 <span className="text-white/50 text-sm font-medium"><br></br></span></a>
+                                            
                                         </div>
                                     </div>
 
@@ -70,8 +70,8 @@ export default function Contact() {
                                             <span>📧</span> Corporate Email
                                         </p>
                                         <div className="space-y-2 text-lg font-bold">
-                                            <a href="mailto:dzulqarnain.adzmi@sabaah7.com" className="block hover:text-red-400 transition underline decoration-red-600/30">dzulqarnain.adzmi@sabaah7.com</a>
-                                            <a href="mailto:prabu.daymudoo@sabaah7.com" className="block hover:text-red-400 transition underline decoration-red-600/30">prabu.daymudoo@sabaah7.com</a>
+                                            <a href="mailto:info.sabaah7@gmail.com" className="block hover:text-red-400 transition underline decoration-red-600/30">info.sabaah7@gmail.com</a>
+                                            
                                         </div>
                                     </div>
 

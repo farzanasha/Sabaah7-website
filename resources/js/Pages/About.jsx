@@ -124,7 +124,7 @@ export default function About() {
                             </div>
                             <div>
                                 <p className="text-red-500 font-black text-[9px] uppercase tracking-widest mb-1">Contact</p>
-                                <p className="text-white text-sm font-bold leading-none drop-shadow-sm">011-1119 0377</p>
+                                <p className="text-white text-sm font-bold leading-none drop-shadow-sm">+6011 6222 0061</p>
                             </div>
                         </div>
                     </motion.div>

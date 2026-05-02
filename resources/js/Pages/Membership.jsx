@@ -27,7 +27,7 @@ export default function Membership() {
 
             // 2. Buka WhatsApp
             const waText = `New Team Application! 🍦\n\nName: ${formData.name}\nPhone: ${formData.phone}\nAddress: ${formData.address}`;
-            window.open(`https://wa.me/601111190377?text=${encodeURIComponent(waText)}`, '_blank');
+            window.open(`https://wa.me/+601162220061?text=${encodeURIComponent(waText)}`, '_blank');
             
             alert('Application recorded! WhatsApp will open now.');
             

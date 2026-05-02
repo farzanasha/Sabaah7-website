@@ -313,8 +313,8 @@ export default function JuniorIceCream() {
                                                             <i className="fas fa-phone-alt text-xs"></i>
                                                         </div>
                                                         <div className="space-y-0.5">
-                                                            <p className="text-[10px] font-black text-lime-800 uppercase tracking-widest leading-none">Contact En Jainal</p>
-                                                            <p className="text-sm font-bold text-lime-900 leading-none">+60 16-966 9824</p>
+                                                            <p className="text-[10px] font-black text-lime-800 uppercase tracking-widest leading-none">Contact</p>
+                                                            <p className="text-sm font-bold text-lime-900 leading-none">+60 11 6222 0061</p>
                                                         </div>
                                                     </div>
 
@@ -325,7 +325,7 @@ export default function JuniorIceCream() {
                                                         </div>
                                                         <div className="space-y-0.5">
                                                             <p className="text-[10px] font-black text-lime-800 uppercase tracking-widest leading-none">Email Address</p>
-                                                            <p className="text-sm font-bold text-lime-900 leading-none">jainal1407@gmail.com</p>
+                                                            <p className="text-sm font-bold text-lime-900 leading-none">info@sabaah7@gmail.com</p>
                                                         </div>
                                                     </div>
 
@@ -395,8 +395,8 @@ export default function JuniorIceCream() {
                                                             <i className="fas fa-phone-alt text-xs"></i>
                                                         </div>
                                                         <div className="space-y-0.5">
-                                                            <p className="text-[10px] font-black text-lime-800 uppercase tracking-widest leading-none">Contact En Dzul</p>
-                                                            <p className="text-sm font-bold text-lime-900 leading-none">+60 11-1119 0377</p>
+                                                            <p className="text-[10px] font-black text-lime-800 uppercase tracking-widest leading-none">Contact</p>
+                                                            <p className="text-sm font-bold text-lime-900 leading-none">+60 11 6222 0061</p>
                                                         </div>
                                                     </div>
 
@@ -407,7 +407,7 @@ export default function JuniorIceCream() {
                                                         </div>
                                                         <div className="space-y-0.5">
                                                             <p className="text-[10px] font-black text-lime-800 uppercase tracking-widest leading-none">Email Address</p>
-                                                            <p className="text-sm font-bold text-lime-900 leading-none">dzulqarnainadzmi@sabaah7.com</p>
+                                                            <p className="text-sm font-bold text-lime-900 leading-none">info.sabaah7@gmail.com</p>
                                                         </div>
                                                     </div>
 
@@ -507,7 +507,7 @@ export default function JuniorIceCream() {
                                         <motion.a 
                                             whileHover={{ scale: 1.05 }}
                                             whileTap={{ scale: 0.95 }}
-                                            href="https://wa.me/601111190377" 
+                                            href="https://wa.me/+601162220061" 
                                             className="inline-block bg-lime-600 hover:bg-lime-700 text-white font-black py-6 px-16 rounded-[2rem] text-2xl shadow-xl transition-all uppercase tracking-widest"
                                         >
                                             Book Now 🍦

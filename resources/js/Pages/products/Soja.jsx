@@ -318,9 +318,9 @@ export default function Soja() {
                     <div className="space-y-2">
                         <div className="flex items-center space-x-2">
                             <i className="fas fa-phone-alt text-[#e5ba73]"></i>
-                            <p className="text-[10px] font-black text-[#e5ba73] uppercase tracking-widest">Contact PIC</p>
+                            <p className="text-[10px] font-black text-[#e5ba73] uppercase tracking-widest">Contact</p>
                         </div>
-                        <p className="text-white font-bold text-sm pl-6">Pn Zubaidah (+60 17-833 2301)</p>
+                        <p className="text-white font-bold text-sm pl-6">+60 11 6222 0061</p>
                     </div>
                 </div>
 
@@ -330,7 +330,7 @@ export default function Soja() {
                         <i className="fas fa-envelope text-[#e5ba73]"></i>
                         <p className="text-[10px] font-black text-[#e5ba73] uppercase tracking-widest">Email Address</p>
                     </div>
-                    <p className="text-white font-bold text-sm pl-6 break-all">zubaidahadzmi.sabaah7@gmail.com</p>
+                    <p className="text-white font-bold text-sm pl-6 break-all">info.sabaah7@gmail.com</p>
                 </div>
 
                 {/* SOSIAL MEDIA BUTTONS */}
@@ -521,12 +521,12 @@ export default function Soja() {
                 <motion.a 
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    href="https://wa.me/60178332301" 
+                    href="https://wa.me/601162220061" 
                     target="_blank"
                     className="w-full md:w-auto bg-green-600 hover:bg-green-500 text-white font-black px-12 py-5 rounded-2xl shadow-2xl transition-all uppercase tracking-widest text-lg flex items-center justify-center gap-3"
                 >
                     <i className="fab fa-whatsapp text-2xl"></i>
-                    Contact Zubaidah
+                    Contact us
                 </motion.a>
             </div>
         </div>
