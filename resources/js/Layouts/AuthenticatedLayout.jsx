@@ -30,8 +30,11 @@ export default function AuthenticatedLayout({ children }) {
 
             {/* FOOTER */}
             <footer className="relative z-10 bg-[#121212] py-10 mt-10 border-t border-white/5 text-center">
+                <p className="text-sm opacity-60 ">
+        Official SSM Registration: <span className="text-red-500 uppercase">SSM: 202603100848 (003842584-V)</span>
+    </p>
                 <p className="text-sm opacity-60">
-                    © 2026 Sabaah7. All rights reserved.
+                    © 2026 Sabaah7. All rights reserved. 
                 </p>
             </footer>
 

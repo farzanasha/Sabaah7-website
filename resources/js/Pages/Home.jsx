@@ -34,9 +34,11 @@ export default function Home() {
                         <h1 className="text-3xl md:text-5xl font-black drop-shadow-lg uppercase tracking-tighter leading-none">
                             Integrated Global <span className="text-red-600">Ecosystem</span>
                         </h1>
-                        <p className="mt-4 text-lg md:text-xl text-gray-200 max-w-xl font-medium">
-                            Headquarters Managing 7 Pillars of Businesses
+                        <p className="mt-4 text-lg md:text-xl text-gray-200 max-w-xl font-medium uppercase">
+                            Intergret business solution | supply and operation
                         </p>
+                        
+                        
                         <button 
                             onClick={() => router.visit('/businesses')}
                             className="mt-10 px-10 py-4 bg-red-700 hover:bg-red-800 transition-all rounded-2xl shadow-2xl text-white font-black uppercase text-xs tracking-widest active:scale-95"
@@ -59,13 +61,12 @@ export default function Home() {
                             <h2 className="text-4xl md:text-5xl font-black text-white mb-6 uppercase tracking-tighter">
                                 One Vision, <span className="text-red-600">Seven Pillars</span>
                             </h2>
-                            <p className="text-lg leading-relaxed text-gray-200 font-medium opacity-90">
+                            <p className="text-lg text-justify leading-relaxed text-gray-200 font-medium opacity-90">
         <span className="font-bold text-white">Sabaah7</span> is a diversified holding company managing 
-        <span className="text-red-500 font-bold"> 7 strategic pillars</span> across multiple industries. 
-        We build an integrated ecosystem designed for sustainable growth, entrepreneurship, and community empowerment.
+        <span className="text-red-500 font-bold"> 7 strategic pillars</span> across multiple industries.We build an integrated ecosystem designed for sustainable growth, entrepreneurship, and community empowerment.
     </p> <br/>
-<div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:text-base font-bold text-gray-300 mb-3">
-        <div className="flex items-center gap-2"> <span className="text-red-600">01.</span> Agri-business & Livestock </div>
+<div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:text-base text-justify font-bold text-gray-300 mb-3">
+        <div className="flex items-justiy gap-2"> <span className="text-red-600">01.</span> Agri-business & Livestock </div>
         <div className="flex items-center gap-2"> <span className="text-red-600">02.</span> Integrated Services </div>
         <div className="flex items-center gap-2"> <span className="text-red-600">03.</span> Food & Beverages Solutions </div>
         <div className="flex items-center gap-2"> <span className="text-red-600">04.</span> Staple Food Supply</div>
@@ -74,11 +75,6 @@ export default function Home() {
         <div className="flex items-center gap-2"> <span className="text-red-600">07.</span> Community & Humanitarian Impact </div>
     </div>
 
-
-
-<p className="pt-4 text-sm font-black text-white border-t border-white/10">
-        Official Registration: <span className="text-red-500 uppercase">SSM: 202603100848 (003842584-V)</span>
-    </p>
 </div>
 
                         {/* LOGO GRID */}
