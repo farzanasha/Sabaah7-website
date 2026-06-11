@@ -32,7 +32,7 @@ export default function Home() {
                     >
                         <img src="/images/logo.png" alt="Sabaah7 Logo" className="h-32 md:h-44 mb-6 drop-shadow-2xl" />
                         <h1 className="text-3xl md:text-5xl font-black drop-shadow-lg uppercase tracking-tighter leading-none">
-                            tegrated Global <span className="text-red-600">Ecosystem</span>
+                            Integrated Global <span className="text-red-600">Ecosystem</span>
                         </h1>
                         <p className="mt-4 text-lg md:text-xl text-gray-200 max-w-xl ">
                             Intergret business solution | Supply and operation
